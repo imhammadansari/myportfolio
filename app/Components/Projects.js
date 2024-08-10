@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from 'react';
 import 'animate.css';
-import { WOW } from 'wowjs';
+// import { WOW } from 'wowjs';
 import RestaurentMessage from './RestaurentMessage';
 import GymMessage from './GymMessage';
 import QuizMessage from './QuizMessage';
@@ -55,15 +55,15 @@ const Projects = () => {
         setrentcarMessage(false);
     };
 
-    useEffect(() => {
-        const wow = new WOW({
-            offset: 100,
-            mobile: true,
-            live: true
-        });
-
-        wow.init();
-    }, []);
+    // useEffect(() => {
+    //     const wow = new WOW({
+    //       offset: 100,
+    //       mobile: false,
+    //       live: true
+    //     });
+    //     wow.init();
+      
+    // }, []);
 
     return (
         <>
@@ -93,9 +93,9 @@ const Projects = () => {
 
                         <div className='grid grid-cols-2'>
 
-                            <img className='lg:w-96 lg:my-2 xl:my-1 rounded-xl transition-transform duration-300 hover:scale-110 wow animate__animated animate__backInLeft' src='./gym.png' />
+                            <img className='lg:w-96 lg:my-2 xl:my-1 rounded-xl transition-transform duration-300 hover:scale-110  animate__animated animate__backInLeft' src='./gym.png' />
 
-                            <div className='px-4 sm:px-3 md:px-5 lg:px-0 xl:px-0 flex flex-col justify-center wow animate__animated animate__backInRight'>
+                            <div className='px-4 sm:px-3 md:px-5 lg:px-0 xl:px-0 flex flex-col justify-center  animate__animated animate__backInRight'>
 
                                 <h1 className='font-bold text-sm md:text-lg lg:text-xl xl:text-xl'>Gym Management Website</h1>
                                 <p className='hidden md:text-sm lg:text-base xl:text-base lg:block'>I developed a Gym Management Website using React/Next.js and Tailwind CSS.
@@ -133,10 +133,10 @@ const Projects = () => {
                         {/* Project Content */}
                         <div className="grid grid-cols-2 my-10">
                             <img
-                                className="lg:my-3 xl:my-3 lg:w-96 rounded-xl transition-transform duration-300 hover:scale-110 wow animate__animated animate__backInLeft"
+                                className="lg:my-3 xl:my-3 lg:w-96 rounded-xl transition-transform duration-300 hover:scale-110  animate__animated animate__backInLeft"
                                 src="./restaurent2.jpg"
                             />
-                            <div className="px-4 sm:px-3 md:px-5 lg:px-0 xl:px-0 flex flex-col justify-center wow animate__animated animate__backInRight">
+                            <div className="px-4 sm:px-3 md:px-5 lg:px-0 xl:px-0 flex flex-col justify-center  animate__animated animate__backInRight">
                                 <h1 className="font-bold text-sm md:text-lg lg:text-xl xl:text-xl">Restaurent System Website</h1>
                                 <p className="hidden md:text-sm lg:text-base xl:text-base lg:block">
                                     I developed a restaurant website using HTML, CSS, and JavaScript. The site features a modern design with a welcoming homepage, detailed menu, and an image gallery showcasing the restaurant's dishes. The contact page provides location, hours, and a form for inquiries. The website aims to enhance the restaurant's online presence and attract more customers.
@@ -168,9 +168,9 @@ const Projects = () => {
 
                         <div className='grid grid-cols-2 my-10'>
 
-                            <img className='lg:w-96 rounded-xl transition-transform duration-300 hover:scale-110 wow animate__animated animate__backInLeft' src='./quiz.png' />
+                            <img className='lg:w-96 rounded-xl transition-transform duration-300 hover:scale-110  animate__animated animate__backInLeft' src='./quiz.png' />
 
-                            <div className='px-4 sm:px-3 md:px-5 lg:px-0 xl:px-0 flex flex-col justify-center wow animate__animated animate__backInRight'>
+                            <div className='px-4 sm:px-3 md:px-5 lg:px-0 xl:px-0 flex flex-col justify-center  animate__animated animate__backInRight'>
 
                                 <h1 className='font-bold text-sm  md:text-lg lg:text-xl xl:text-xl'>Quiz Management App</h1>
                                 <p className='hidden md:text-sm lg:text-base xl:text-base lg:block'>I developed a Quiz Management App using Java with a GUI. The app allows users to create, manage,
@@ -205,9 +205,9 @@ const Projects = () => {
 
                         <div className='grid grid-cols-2 my-10'>
 
-                            <img className='lg:w-96 rounded-xl transition-transform duration-300 hover:scale-110 wow animate__animated animate__backInLeft' src='./airline.jpg' />
+                            <img className='lg:w-96 rounded-xl transition-transform duration-300 hover:scale-110  animate__animated animate__backInLeft' src='./airline.jpg' />
 
-                            <div className='px-4 sm:px-3 md:px-5 lg:px-0 xl:px-0 flex flex-col justify-center wow animate__animated animate__backInRight'>
+                            <div className='px-4 sm:px-3 md:px-5 lg:px-0 xl:px-0 flex flex-col justify-center  animate__animated animate__backInRight'>
 
                                 <h1 className='font-bold text-sm  md:text-lg lg:text-xl xl:text-xl'>Airline Management Website</h1>
                                 <p className='hidden md:text-sm lg:text-base xl:text-base lg:block'>I developed an Airline Management Website using Java with a GUI. The website provides a
@@ -244,9 +244,9 @@ const Projects = () => {
 
                         <div className='grid grid-cols-2 my-10'>
 
-                            <img className='lg:my-3 xl:my-3 lg:w-96 rounded-xl transition-transform duration-300 hover:scale-110 wow animate__animated animate__backInLeft' src='./rentcar.jpg' />
+                            <img className='lg:my-3 xl:my-3 lg:w-96 rounded-xl transition-transform duration-300 hover:scale-110  animate__animated animate__backInLeft' src='./rentcar.jpg' />
 
-                            <div className='px-4 sm:px-3 md:px-5 lg:px-0 xl:px-0 flex flex-col justify-center wow animate__animated animate__backInRight'>
+                            <div className='px-4 sm:px-3 md:px-5 lg:px-0 xl:px-0 flex flex-col justify-center  animate__animated animate__backInRight'>
 
                                 <h1 className='font-bold text-sm md:text-lg lg:text-xl xl:text-xl'>Rent-A-Car System</h1>
                                 <p className='hidden md:text-sm lg:text-base lg:block'>I developed a Rent a Car website using HTML, CSS, and JavaScript. The website showcases available

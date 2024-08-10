@@ -15,7 +15,7 @@ const Banner = () => {
         <h1 className='text-sm sm:text-base md:text-xl lg:text-3xl xl:text-3xl font-bold animate__animated animate__backInLeft'>Hi, I'm &lt;/&gt; <br/> <span className='text-sky-600 text-2xl sm:text-2xl md:text-4xl lg:text-6xl xl:text-6xl font-bold animate__animated animate__backInLeft'>Hammad Ansari</span></h1>
         <h1 className='text-sm md:text-base lg:text-xl xl:text-xl lg:my-1 xl:my-1 text-white animate__animated animate__backInUp'>Front-End Developer</h1>
 
-        <button onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })} className='w-[5rem] md:w-[8rem] lg:w-32 xl:w-32 h-7 md:h-9 lg:h-10 xl:h-10 bg-sky-600 text-white mt-2 text-xs md:text-base lg:text-lg xl:text-lg hover:bg-white hover:text-sky-600 rounded'>Contact Me</button>
+        <button onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })} className='animate__animated animate__backInLeft w-[5rem] md:w-[8rem] lg:w-32 xl:w-32 h-7 md:h-9 lg:h-10 xl:h-10 bg-sky-600 text-white mt-2 text-xs md:text-base lg:text-lg xl:text-lg hover:bg-white hover:text-sky-600 rounded'>Contact Me</button>
         </div>
 
       </div>

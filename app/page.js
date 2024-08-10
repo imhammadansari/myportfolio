@@ -7,7 +7,6 @@ import Projects from './Components/Projects'
 import Why from './Components/Why'
 import Contact from './Components/Contact'
 import Footer from './Components/Footer'
-import Message from './Components/RestaurentMessage'
 
 const page = () => {
   return (

@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
 const AirlineMessage = ({hideAirMessage}) => {
   const [message, setmessage] = useState(true)
@@ -9,7 +9,7 @@ const AirlineMessage = ({hideAirMessage}) => {
   }
 
 
-  useEffect
+  
   return (
     <>
       {message && (

@@ -1,8 +1,9 @@
 "use client"
-import React, { useEffect } from 'react';
+// import React, { useEffect } from 'react';
 import 'animate.css';
-import { WOW } from 'wowjs'; 
+// import { WOW } from 'wowjs'; 
 import Swal from 'sweetalert2'
+
 
 const Contact = () => {
     const onSubmit = async (event) => {
@@ -43,17 +44,20 @@ const Contact = () => {
         }
     };
 
-    useEffect(() => {
-        const wow = new WOW({
-            offset: 100,
-            mobile: false,
-            live: true
-        });
-    
-        wow.init();
-    }, []);
+    // useEffect(() => {
+    //     const wow = new WOW({
+    //       offset: 100,
+    //       mobile: false,
+    //       live: true
+    //     });
+    //     wow.init();
+      
+    // }, []);
 
+ 
     return (
+        <>
+        
         <div id='contact' className='w-full'>
             <div className='text-center mt-12 lg:mt-16 xl:mt-16'>
                 <h1 className='text-xl sm:text-2xl md:text-3xl lg:text-5xl xl:text-5xl font-bold'>
@@ -65,7 +69,7 @@ const Contact = () => {
             </div>
 
             <div className='bg-black bg-opacity-85 rounded-2xl w-auto mx-10 mt-5 pb-4 lg:pb-6'>
-                <form className='wow animate__animated animate__zoomIn' onSubmit={onSubmit}>
+                <form className=' animate__animated animate__zoomIn' onSubmit={onSubmit}>
                     <div className='p-4 flex flex-col gap-4 md:flex-row lg:flex-row lg:px-14 lg:py-8 lg:gap-20'>
                         <div className='flex flex-col gap-4'>
                             <input 
@@ -106,6 +110,7 @@ const Contact = () => {
                 </form>
             </div>
         </div>
+        </>
     );
 }
 

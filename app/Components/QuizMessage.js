@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
 const QuizMessage = ({hideQuizMessage}) => {
   const [message, setmessage] = useState(true)
@@ -9,7 +9,6 @@ const QuizMessage = ({hideQuizMessage}) => {
   }
 
 
-  useEffect
   return (
     <>
       {message && (
