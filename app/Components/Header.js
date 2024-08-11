@@ -16,12 +16,12 @@ const Header = () => {
                         Hammad
                     </h1>
 
-                    <div className='absolute top-0 right-0 flex justify-end px-10 py-4 bg-white lg:hidden xl:hidden'>
-                        <img className='w-7 cursor-pointer' src='menu-bar.png' onClick={menu} />
+                    <div className='absolute top-0 right-0 flex justify-end px-10 py-4 lg:hidden xl:hidden z-50'>
+                        <img className='w-7 cursor-pointer filter invert' src='menu-bar.png' onClick={menu} />
                     </div>
 
                     {showmenu && (
-                        <div className='w-28 h-64 absolute top-0 right-0 flex text-center bg-black my-14 px-4 py-5'>
+                        <div className='w-28 h-64 absolute top-0 right-0 flex text-center bg-black my-14 px-4 py-5 z-50'>
                             <ul className='flex flex-col gap-4'>
                                 <li className='text-white'><a href='#'>Home</a></li>
                                 <li className='text-white'><a href='#'>About</a></li>
