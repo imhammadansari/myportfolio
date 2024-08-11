@@ -10,13 +10,13 @@ const Header = () => {
 
     return (
         <>
-            <div className='w-full'>
+            <div className='w-full '>
                 <div className='flex px-4 md:px-12 py-4 text-lg lg:text-xl xl:text-xl' style={{ backgroundColor: '#06090b' }}>
                     <h1 className='text-white'>
                         Hammad
                     </h1>
 
-                    <div className='absolute top-0 right-0 flex justify-end px-10 py-4 lg:hidden xl:hidden z-50'>
+                    <div className='absolute top-0 right-0 flex justify-end px-4 py-4 lg:hidden xl:hidden z-50'>
                         <img className='w-7 cursor-pointer filter invert' src='menu-bar.png' onClick={menu} />
                     </div>
 
