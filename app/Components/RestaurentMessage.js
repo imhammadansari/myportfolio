@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react';
 
 const RestaurentMessage = ({hideMessage}) => {
   const [message, setmessage] = useState(true)
@@ -7,6 +7,14 @@ const RestaurentMessage = ({hideMessage}) => {
   const showMessage = () => {
     setmessage(!message)
   }
+
+  const audioRef = useRef(null);
+
+    const playAudio = () => {
+        if (audioRef.current) {
+            audioRef.current.play();
+        }
+    };
 
 
   return (
@@ -34,10 +42,14 @@ const RestaurentMessage = ({hideMessage}) => {
 
               <div className='flex justify-center pb-4 mt-2'>
 
-                <button className='cursor-pointer w-[4.5rem] h-9 text-xs sm:w-[6rem] sm:text-sm md:md:w-[6rem] md:text-sm  bg-sky-600 text-white rounded mt-2 hover:bg-white hover:text-sky-600'>Live Demo</button>
-                <button className='cursor-pointer w-[4.5rem] h-9 text-xs sm:w-[6rem] sm:text-sm md:md:w-[6rem] md:text-sm bg-sky-600 text-white rounded mt-2 hover:bg-white hover:text-sky-600 mx-2 sm:mx-3 md:mx-4'>Source</button>
+                <button onClick={playAudio} className='cursor-pointer w-[4.5rem] h-9 text-xs sm:w-[6rem] sm:text-sm md:md:w-[6rem] md:text-sm  bg-sky-600 text-white rounded mt-2 hover:bg-white hover:text-sky-600'>Live Demo</button>
+                <button onClick={playAudio} className='cursor-pointer w-[4.5rem] h-9 text-xs sm:w-[6rem] sm:text-sm md:md:w-[6rem] md:text-sm bg-sky-600 text-white rounded mt-2 hover:bg-white hover:text-sky-600 mx-2 sm:mx-3 md:mx-4'>Source</button>
 
               </div>
+              <audio ref={audioRef}>
+                  <source src="./chin_tapak_dum_dum.mp3" type="audio/mpeg" />
+                  Your browser does not support the audio element.
+                </audio>
 
             </div>
 

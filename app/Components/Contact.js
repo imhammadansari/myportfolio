@@ -1,9 +1,7 @@
-"use client"
-// import React, { useEffect } from 'react';
+"use client";
+import React, { useEffect } from 'react';
 import 'animate.css';
-// import { WOW } from 'wowjs'; 
-import Swal from 'sweetalert2'
-
+import Swal from 'sweetalert2';
 
 const Contact = () => {
     const onSubmit = async (event) => {
@@ -30,30 +28,29 @@ const Contact = () => {
                     title: "Success!",
                     text: "Message Sent Successfully!",
                     icon: "success"
-                  });
+                });
             } else {
                 Swal.fire({
                     icon: "error",
                     title: "Oops...",
                     text: "Something went wrong!",
                     footer: '<a href="#">Why do I have this issue?</a>'
-                  });;
+                });
             }
         } catch (error) {
             console.error("Error submitting form:", error);
         }
     };
 
-    // useEffect(() => {
-    //     const wow = new WOW({
-    //       offset: 100,
-    //       mobile: false,
-    //       live: true
-    //     });
-    //     wow.init();
-      
-    // }, []);
-
+    useEffect(() => {
+        const WOW = require('wowjs').WOW;
+        const wow = new WOW({
+            offset: 100,
+            mobile: true,
+            live: true
+        });
+        wow.init();
+    }, []);
  
     return (
         <>
@@ -69,7 +66,7 @@ const Contact = () => {
             </div>
 
             <div className='bg-black bg-opacity-85 rounded-2xl w-auto mx-10 mt-5 pb-4 lg:pb-6'>
-                <form className=' animate__animated animate__zoomIn' onSubmit={onSubmit}>
+                <form className='wow animate__animated animate__zoomIn' onSubmit={onSubmit}>
                     <div className='p-4 flex flex-col gap-4 md:flex-row lg:flex-row lg:px-14 lg:py-8 lg:gap-20'>
                         <div className='flex flex-col gap-4'>
                             <input 

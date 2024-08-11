@@ -19,7 +19,7 @@ const page = () => {
     <Why />
     <Contact />
     <Footer />
-    
+
     </>
   )
 }
