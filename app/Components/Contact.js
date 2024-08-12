@@ -2,6 +2,9 @@
 import React, { useEffect } from 'react';
 import 'animate.css';
 import Swal from 'sweetalert2';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
 
 const Contact = () => {
     const onSubmit = async (event) => {
@@ -42,20 +45,23 @@ const Contact = () => {
         }
     };
 
-    useEffect(() => {
-        const WOW = require('wowjs').WOW;
-        const wow = new WOW({
-            offset: 100,
-            mobile: true,
-            live: true
-        });
-        wow.init();
-    }, []);
+  useEffect(() => {
+    AOS.init({
+
+    });
+    // const WOW = require('wowjs').WOW;
+    // const wow = new WOW({
+    //     offset: 100,
+    //     mobile: true,
+    //     live: true
+    // });
+    // wow.init();
+}, []);
  
     return (
         <>
         
-        <div id='contact' className='w-full'>
+        <div id='contact' className='w-full h-screen'>
             <div className='text-center mt-12 lg:mt-16 xl:mt-16'>
                 <h1 className='text-xl sm:text-2xl md:text-3xl lg:text-5xl xl:text-5xl font-bold'>
                     Get in <span className='text-sky-600'>Touch</span>
@@ -66,7 +72,7 @@ const Contact = () => {
             </div>
 
             <div className='bg-black bg-opacity-85 rounded-2xl w-auto mx-10 mt-5 pb-4 lg:pb-6'>
-                <form className='wow animate__animated animate__zoomIn' onSubmit={onSubmit}>
+                <form className='' data-aos="zoom-in" onSubmit={onSubmit}>
                     <div className='p-4 flex flex-col gap-4 md:flex-row lg:flex-row lg:px-14 lg:py-8 lg:gap-20'>
                         <div className='flex flex-col gap-4'>
                             <input 

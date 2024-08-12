@@ -7,7 +7,9 @@ import RestaurentMessage from './RestaurentMessage';
 import GymMessage from './GymMessage';
 import QuizMessage from './QuizMessage';
 import AirlineMessage from './AirlineMessage';
-import RentCarMessage from './RentCarMessage';
+import RentCarMessage from './RentCarMessage';import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
 
 const Projects = () => {
     const [restaurentMessage, setRestaurentMessage] = useState(false);
@@ -36,13 +38,19 @@ const Projects = () => {
     const hideRentCarMessage = () => setRentcarMessage(false);
 
     useEffect(() => {
-        const WOW = require('wowjs').WOW;
-        const wow = new WOW({
-            offset: 100,
-            mobile: false,
-            live: true
+        AOS.init({
+            offset: 20,
+            duration: 1000,
+            mirror: true
+    
         });
-        wow.init();
+        // const WOW = require('wowjs').WOW;
+        // const wow = new WOW({
+        //     offset: 100,
+        //     mobile: true,
+        //     live: true
+        // });
+        // wow.init();
     }, []);
 
     return (
@@ -68,8 +76,8 @@ const Projects = () => {
                             </div>
                         )}
                         <div className='grid grid-cols-2'>
-                            <img className='lg:w-96 lg:my-2 xl:my-1 rounded-xl transition-transform duration-300 hover:scale-110 wow animate__animated animate__backInLeft' src='./gym.png' />
-                            <div className='px-4 sm:px-3 md:px-5 lg:px-0 xl:px-0 flex flex-col justify-center wow animate__animated animate__backInRight'>
+                            <img className='lg:w-96 lg:my-2 xl:my-1 rounded-xl transition-transform duration-300 hover:scale-110' data-aos="flip-left" src='./gym.png' />
+                            <div className='px-4 sm:px-3 md:px-5 lg:px-0 xl:px-0 flex flex-col justify-center' data-aos="flip-right">
                                 <h1 className='font-bold text-sm md:text-lg lg:text-xl xl:text-xl'>Gym Management Website</h1>
                                 <p className='hidden md:text-sm lg:text-base xl:text-base lg:block'>I developed a Gym Management Website using React/Next.js and Tailwind CSS. The website offers a sleek and responsive design, enabling users to manage memberships, book classes, and track their fitness progress. It provides a seamless user experience with real-time updates and efficient data handling, aiming to enhance gym operations and member engagement.</p>
                                 <div>
@@ -107,11 +115,11 @@ const Projects = () => {
                         {/* Project Content */}
                         <div className="grid grid-cols-2 my-10">
                             <img
-                                className="lg:my-3 xl:my-3 lg:w-96 rounded-xl transition-transform duration-300 hover:scale-110 wow animate__animated animate__backInLeft"
+                                className="lg:my-3 xl:my-3 lg:w-96 rounded-xl transition-transform duration-300 hover:scale-110 " data-aos="flip-left"
                                 src="./restaurent2.jpg"
                             />
-                            <div className="px-4 sm:px-3 md:px-5 lg:px-0 xl:px-0 flex flex-col justify-center wow animate__animated animate__backInRight">
-                                <h1 className="font-bold text-sm md:text-lg lg:text-xl xl:text-xl">Restaurent System Website</h1>
+                            <div className="px-4 sm:px-3 md:px-5 lg:px-0 xl:px-0 flex flex-col justify-center" data-aos="flip-right">
+                                <h1 className="font-bold text-sm md:text-lg lg:text-xl xl:text-xl">Restaurent Website</h1>
                                 <p className="hidden md:text-sm lg:text-base xl:text-base lg:block">
                                     I developed a restaurant website using HTML, CSS, and JavaScript. The site features a modern design with a welcoming homepage, detailed menu, and an image gallery showcasing the restaurant's dishes. The contact page provides location, hours, and a form for inquiries. The website aims to enhance the restaurant's online presence and attract more customers.
                                 </p>
@@ -142,9 +150,9 @@ const Projects = () => {
 
                         <div className='grid grid-cols-2 my-10'>
 
-                            <img className='lg:w-96 rounded-xl transition-transform duration-300 hover:scale-110 wow animate__animated animate__backInLeft' src='./quiz.png' />
+                            <img className='lg:w-96 rounded-xl transition-transform duration-300 hover:scale-110' data-aos="flip-left" src='./quiz.png' />
 
-                            <div className='px-4 sm:px-3 md:px-5 lg:px-0 xl:px-0 flex flex-col justify-center wow animate__animated animate__backInRight'>
+                            <div className='px-4 sm:px-3 md:px-5 lg:px-0 xl:px-0 flex flex-col justify-center' data-aos="flip-right">
 
                                 <h1 className='font-bold text-sm  md:text-lg lg:text-xl xl:text-xl'>Quiz Management App</h1>
                                 <p className='hidden md:text-sm lg:text-base xl:text-base lg:block'>I developed a Quiz Management App using Java with a GUI. The app allows users to create, manage,
@@ -179,9 +187,9 @@ const Projects = () => {
 
                         <div className='grid grid-cols-2 my-10'>
 
-                            <img className='lg:w-96 rounded-xl transition-transform duration-300 hover:scale-110 wow animate__animated animate__backInLeft' src='./airline.jpg' />
+                            <img className='lg:w-96 rounded-xl transition-transform duration-300 hover:scale-110' data-aos="flip-left" src='./airline.jpg' />
 
-                            <div className='px-4 sm:px-3 md:px-5 lg:px-0 xl:px-0 flex flex-col justify-center wow animate__animated animate__backInRight'>
+                            <div className='px-4 sm:px-3 md:px-5 lg:px-0 xl:px-0 flex flex-col justify-center' data-aos="flip-right"> 
 
                                 <h1 className='font-bold text-sm  md:text-lg lg:text-xl xl:text-xl'>Airline Management Website</h1>
                                 <p className='hidden md:text-sm lg:text-base xl:text-base lg:block'>I developed an Airline Management Website using Java with a GUI. The website provides a
@@ -218,9 +226,9 @@ const Projects = () => {
 
                         <div className='grid grid-cols-2 my-10'>
 
-                            <img className='lg:my-3 xl:my-3 lg:w-96 rounded-xl transition-transform duration-300 hover:scale-110 wow animate__animated animate__backInLeft' src='./rentcar.jpg' />
+                            <img className='lg:my-3 xl:my-3 lg:w-96 rounded-xl transition-transform duration-300 hover:scale-110' data-aos="flip-left" src='./rentcar.jpg' />
 
-                            <div className='px-4 sm:px-3 md:px-5 lg:px-0 xl:px-0 flex flex-col justify-center wow animate__animated animate__backInRight'>
+                            <div className='px-4 sm:px-3 md:px-5 lg:px-0 xl:px-0 flex flex-col justify-center' data-aos="flip-right">
 
                                 <h1 className='font-bold text-sm md:text-lg lg:text-xl xl:text-xl'>Rent-A-Car System</h1>
                                 <p className='hidden md:text-sm lg:text-base lg:block'>I developed a Rent a Car website using HTML, CSS, and JavaScript. The website showcases available
