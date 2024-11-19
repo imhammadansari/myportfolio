@@ -29,23 +29,23 @@ const Skills = () => {
                 <div className='w-full my-7 sm:my-8 md:my-9 lg:my-10 xl:my-12 flex justify-center gap-[1rem] sm:gap-[1rem] md:gap-[3rem] lg:gap-[7.6rem] xl:gap-[7.6rem] md:mx-auto lg:mx-auto xl:mx-auto'>
 
     <div className='flex flex-col justify-center items-center' data-aos="zoom-in">
-        <img className='w-8 h-8 sm:w-14 md:w-16 lg:w-24 xl:w-24 sm:h-14 md:h-16 lg:h-24 xl:h-24 animate-pulse' src='./html-5.png' />
-        <p className='text-sm sm:text-base md:text-lg lg:text-xl xl:text-xl md:font-bold lg:font-bold xl:font-bold text-center'>Html</p>
+        <img className='w-8 h-8 sm:w-14 md:w-16 lg:w-24 xl:w-24 sm:h-14 md:h-16 lg:h-24 xl:h-24 animate-pulse' src='./mongo.png' />
+        <p className='text-sm sm:text-base md:text-lg lg:text-xl xl:text-xl md:font-bold lg:font-bold xl:font-bold text-center'>MongoDB</p>
     </div>
 
     <div className='flex flex-col justify-center items-center' data-aos="zoom-in">
-        <img className='w-8 h-8 sm:w-14 md:w-16 lg:w-24 xl:w-24 sm:h-14 md:h-16 lg:h-24 xl:h-24 animate-pulse' src='./social.png' />
-        <p className='text-sm sm:text-base md:text-lg lg:text-xl xl:text-xl md:font-bold lg:font-bold xl:font-bold text-center'>Css</p>
-    </div>
-
-    <div className='flex flex-col justify-center items-center' data-aos="zoom-in">
-        <img className='w-8 h-8 sm:w-14 md:w-16 lg:w-24 xl:w-24 sm:h-14 md:h-16 lg:h-24 xl:h-24 animate-pulse' src='./java-script.png' />
-        <p className='text-sm sm:text-base md:text-lg lg:text-xl xl:text-xl md:font-bold lg:font-bold xl:font-bold text-center'>JavaScript</p>
+        <img className='w-8 h-8 sm:w-14 md:w-16 lg:w-36 xl:w-36 sm:h-14 md:h-16 lg:h-24 xl:h-24 animate-pulse' src='./express.png' />
+        <p className='text-sm sm:text-base md:text-lg lg:text-xl xl:text-xl md:font-bold lg:font-bold xl:font-bold text-center'>Express</p>
     </div>
 
     <div className='flex flex-col justify-center items-center' data-aos="zoom-in">
         <img className='w-8 h-8 sm:w-14 md:w-16 lg:w-24 xl:w-24 sm:h-14 md:h-16 lg:h-24 xl:h-24 animate-pulse' src='./physics.png' />
         <p className='text-sm sm:text-base md:text-lg lg:text-xl xl:text-xl md:font-bold lg:font-bold xl:font-bold text-center'>React</p>
+    </div>
+
+    <div className='flex flex-col justify-center items-center' data-aos="zoom-in">
+        <img className='w-8 h-8 sm:w-14 md:w-16 lg:w-24 xl:w-24 sm:h-14 md:h-16 lg:h-24 xl:h-24 animate-pulse' src='./nodejs.png' />
+        <p className='text-sm sm:text-base md:text-lg lg:text-xl xl:text-xl md:font-bold lg:font-bold xl:font-bold text-center'>Node</p>
     </div>
 
     <div className='flex flex-col justify-center items-center' data-aos="zoom-in">

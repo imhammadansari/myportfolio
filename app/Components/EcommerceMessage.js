@@ -1,7 +1,7 @@
 "use client"
 import React, { useRef, useState } from 'react';
 
-const GymMessage = ({hideGymMessage}) => {
+const EcommerceMessage = ({hideEcommerceMessage}) => {
   const [message, setmessage] = useState(true)
 
   const showMessage = () => {
@@ -15,15 +15,13 @@ const GymMessage = ({hideGymMessage}) => {
             audioRef.current.play();
         }
     };
-
-
-
+  
   return (
     <>
       {message && (
         <div className='flex flex-col justify-center items-center mt-5'>
           <div className='w-5/6 bg-white bg-opacity-80 p-4 rounded-2xl'>
-          <img className='w-5 cursor-pointer' src='./delete-button.png' onClick={hideGymMessage} />
+          <img className='w-5 cursor-pointer' src='./delete-button.png' onClick={hideEcommerceMessage} />
 
           <div className='w-full flex flex-col justify-center items-center'>
 
@@ -31,10 +29,14 @@ const GymMessage = ({hideGymMessage}) => {
 
             <div className='w-full '>
 
-              <h1 className='font-bold text-lg md:text-xl text-center'>Gym Management System</h1>
-              <p className='text-xs md:text-lg px-2 sm:px-3 md:px-5'>
-                It is not completed yet, Working in progress
-              {/* I developed a Gym Management Website using MERN Stack (MongoDB, Express.js, React.js, Node.js). The website offers a sleek and responsive design, enabling users to manage memberships, book classes, and track their fitness progress. It provides a seamless user experience with real-time updates and efficient data handling, aiming to enhance gym operations and member engagement. */}
+              <h1 className='font-bold text-lg md:text-xl text-center'>E-commerce Website</h1>
+              <p className='text-xs md:text-lg px-5'>
+              I developed a fully functional 
+                                E-commerce website leveraging the MERN Stack (MongoDB, Express.js, React.js, Node.js). It contains a best
+                                 user friendly interface and modern design. Users can create an account with secure login, explore all 
+                                 product categories, browse products in each category, add items to their cart, and proceed to checkout. 
+                                 Once the order is placed, they can see the details of the Pending orders. This project showcases a smooth 
+                                 and secure shopping experience from start to finish.
               </p>
 
               <div className='flex justify-center pb-4 mt-2'>
@@ -56,4 +58,4 @@ const GymMessage = ({hideGymMessage}) => {
   )
 }
 
-export default GymMessage
+export default EcommerceMessage
