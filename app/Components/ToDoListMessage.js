@@ -35,12 +35,7 @@ const ToDoListMessage = ({hideToDoListMessage}) => {
               I Developed a To-Do List app using HTML, CSS, and JavaScript. This app allows users to easily add, edit, and delete tasks, helping them stay organized and productive. With a simple and intuitive design, it ensures a smooth user experience while managing daily tasks efficiently.
               </p>
 
-              <div className='flex justify-center pb-4 mt-2'>
-
-                <button className='cursor-pointer w-[4.5rem] h-9 text-xs sm:w-[6rem] sm:text-sm md:md:w-[6rem] md:text-sm  bg-sky-600 text-white rounded mt-2 hover:bg-white hover:text-sky-600'>Live Demo</button>
-                <button className='cursor-pointer w-[4.5rem] h-9 text-xs sm:w-[6rem] sm:text-sm md:md:w-[6rem] md:text-sm bg-sky-600 text-white rounded mt-2 hover:bg-white hover:text-sky-600 mx-2 sm:mx-3 md:mx-4'>Source</button>
-
-              </div>
+              
               
 
             </div>
