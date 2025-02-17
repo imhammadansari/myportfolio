@@ -314,7 +314,7 @@ const Projects = () => {
                         )}
 
 
-                        <div className='grid grid-cols-2 mt-20'>
+                        <div className='grid grid-cols-2 mt-8 md:mt-20'>
 
                             <img className='lg:w-96 rounded-xl transition-transform duration-300 hover:scale-110' data-aos="flip-left" src='./airline.jpg' />
 
@@ -338,7 +338,7 @@ const Projects = () => {
 
 
 
-                    <div className='relative'>
+                    <div className='relative mt-8'>
 
                         {calculatorMessage && (
                             <div className='fixed inset-0 w-full h-screen bg-black bg-opacity-90 z-40'> </div>

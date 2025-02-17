@@ -26,8 +26,8 @@ const About = () => {
   return (
     <>
 
-      <div id="about" className='w-full bg-black bg-opacity-95 flex lg:mt-4 xl:mt-4 lg:pt-20 xl:pt-20 '>
-        <div className='w-[20rem] sm:w-[23rem] md:w-[45rem] lg:w-[40rem] xl:w-[40rem] mt-10 mx-4 sm:m-10 lg:mx-20 xl:mx-20'>
+      <div id="about" className='w-full bg-black bg-opacity-95 flex py-4 lg:mt-4 xl:mt-4 lg:py-8 xl:py-8 '>
+        <div className='w-[20rem] sm:w-[23rem] md:w-[45rem] lg:w-[40rem] xl:w-[40rem] mt-10 mx-4 sm:mx-10 lg:mx-20 xl:mx-20'>
           <h1 className='text-xl text-white sm:text-2xl md:text-3xl lg:text-5xl xl:text-5xl font-bold' data-aos="fade-down">
             About <span className='text-sky-600'>Me</span>
           </h1>
