@@ -61,9 +61,9 @@ const Contact = () => {
     return (
         <>
         
-        <div id='contact' className='w-full h-screen'>
-            <div className='text-center mt-12 lg:mt-16 xl:mt-16'>
-                <h1 className='text-xl sm:text-2xl md:text-3xl lg:text-5xl xl:text-5xl font-bold'>
+        <div id='contact' className='w-full h-screen bg-black bg-opacity-95'>
+            <div className='text-center mt-2 lg:mt-4 xl:mt-4 pt-4 lg:pt-8 xl:pt-8'>
+                <h1 className='text-xl text-white sm:text-2xl md:text-3xl lg:text-5xl xl:text-5xl font-bold'>
                     Get in <span className='text-sky-600'>Touch</span>
                 </h1>
                 <h1 className='text-sky-600 mt-[-17px] sm:mt-[-25px] lg:mt-[-30px] xl:mt-[-31px] font-bold sm:text-xl md:text-2xl lg:text-4xl xl:text-4xl rounded'>

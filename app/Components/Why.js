@@ -16,8 +16,8 @@ const Why = () => {
 
   return (
     <>
-      <div className='w-full'>
-        <div className='relative mx-auto mt-12 lg:mt-16 xl:mt-16 grid' data-aos="fade-down">
+      <div className='w-full bg-black bg-opacity-95'>
+        <div className='relative mx-auto pt-4 lg:pt-8 xl:pt-8 mt-2 lg:mt-4 grid' data-aos="fade-down">
           <img className='w-full h-96 bg-center bg-cover ' src='./black.jpg' alt='Background' />
 
           <div className='absolute w-full h-full flex flex-col lg:flex-row xl:flex-row gap-0 md:gap-2 lg:gap-4 xl:gap-4 p-3 items-center justify-center'>

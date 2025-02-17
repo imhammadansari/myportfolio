@@ -26,15 +26,15 @@ const About = () => {
   return (
     <>
 
-      <div id="about" className='w-full flex lg:mt-20 xl:mt-20 '>
+      <div id="about" className='w-full bg-black bg-opacity-95 flex lg:mt-4 xl:mt-4 lg:pt-20 xl:pt-20 '>
         <div className='w-[20rem] sm:w-[23rem] md:w-[45rem] lg:w-[40rem] xl:w-[40rem] mt-10 mx-4 sm:m-10 lg:mx-20 xl:mx-20'>
-          <h1 className='text-xl sm:text-2xl md:text-3xl lg:text-5xl xl:text-5xl font-bold' data-aos="fade-down">
+          <h1 className='text-xl text-white sm:text-2xl md:text-3xl lg:text-5xl xl:text-5xl font-bold' data-aos="fade-down">
             About <span className='text-sky-600'>Me</span>
           </h1>
           <h1 className='text-sky-600 mt-[-17px] sm:mt-[-25px] lg:mt-[-30px] xl:mt-[-31px] font-bold sm:text-xl md:text-2xl lg:text-4xl xl:text-4xl rounded' data-aos="fade-right">
             ____
           </h1>
-          <p className='text-xs sm:text-base md:text-lg lg:text-lg xl:text-lg sm:mt-2 lg:mt-3 xl:mt-3' data-aos="fade-down">
+          <p className='text-xs text-white sm:text-base md:text-lg lg:text-lg xl:text-lg sm:mt-2 lg:mt-3 xl:mt-3' data-aos="fade-down">
             I am a MERN stack developer specializing in front-end development. I create responsive, user-friendly websites with intuitive and visually appealing interfaces. Passionate about continuous learning, I stay updated on the latest tools and techniques to enhance the web experience.
           </p>
           <a href="./CV-Hammad Ansari.pdf" download><button data-aos="fade-up" className='w-16 h-8 md:font-bold lg:font-bold xl:font-bold text-xs mt-4 sm:w-20 sm:h-8 sm:text-sm md:w-24 md:h-9 md:text-base lg:w-28 lg:h-10 lg:text-lg xl:w-28 xl:h-10 xl:text-lg rounded hover:bg-white hover:text-sky-600 text-white bg-sky-600'>
