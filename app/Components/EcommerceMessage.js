@@ -41,9 +41,15 @@ const EcommerceMessage = ({hideEcommerceMessage}) => {
 
               <div className='flex justify-center pb-4 mt-2'>
 
-                <button className='w-[4.5rem] h-9 text-xs sm:w-[6rem] sm:text-sm md:md:w-[6rem] md:text-sm cursor-pointer bg-sky-600 text-white rounded mt-2 hover:bg-white hover:text-sky-600'>Live Demo</button>
-                <button className='w-[4.5rem] h-9 text-xs sm:w-[6rem] sm:text-sm md:md:w-[6rem] md:text-sm cursor-pointer bg-sky-600 text-white rounded mt-2 hover:bg-white hover:text-sky-600 mx-2 sm:mx-3 md:mx-4'>Source</button>
-
+                <button
+                                        className='w-[4.5rem] h-9 text-xs sm:w-[6rem] sm:text-sm md:md:w-[6rem] md:text-sm cursor-pointer hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
+    text-white bg-gradient-to-r from-[#d062a0] to-[#5c0bed] rounded mt-2'
+                                        onClick={() => {
+                                            window.location.href = 'https://mern-ecommerce-rnup.onrender.com/home';
+                                        }}
+                                    >
+                                        Live Demo
+                                    </button>
               </div>
               
 

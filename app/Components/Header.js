@@ -11,8 +11,8 @@ const Header = () => {
 
     return (
         <>
-            <div className='w-full '>
-                <div className='flex items-center px-4 md:px-12 py-4 text-lg lg:text-xl xl:text-xl' style={{ backgroundColor: '#06090b' }}>
+            <div className='w-full bg-black'>
+                <div className='flex items-center px-4 md:px-24 py-4 text-lg lg:text-xl xl:text-xl' style={{ backgroundColor: '#06090b' }}>
                     <h1 className='text-lg md:text-2xl lg:text-2xl xl:text-2xl text-white'>
                         <Link href="/">Hammad.</Link>
                     </h1>

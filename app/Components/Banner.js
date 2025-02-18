@@ -3,12 +3,19 @@ import React, { useEffect } from 'react'
 import 'animate.css';
 import Aos from 'aos' 
 import 'aos/dist/aos.css';
-
-
-  
+import { useLottie } from "lottie-react";
+import AboutAnimation from "../assets/aboutAnimate.json";
 
 
 const Banner = () => {
+
+  const options = {
+    animationData: AboutAnimation,
+    loop: true,
+  };
+
+  const { View } = useLottie(options);
+  
   useEffect(() => {
     Aos.init({
       offset: 20
