@@ -66,7 +66,7 @@ const About = () => {
 
         </div>
         <div data-aos="zoom-in" className='w-[10rem] sm:w-[14rem] sm:ml-20 md:w-[30rem] lg:w-[25rem] xl:w-[30rem] flex items-center md:justify-center justify-end xl:justify-center mt-8 sm:mt-0 lg:mt-0'>
-        <div className="w-[18rem] md:w-[28rem]">{View}</div>
+        <div className="w-[18rem] lg:w-[28rem]">{View}</div>
         </div>
       </div>
     </>

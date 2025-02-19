@@ -82,9 +82,9 @@ const Projects = () => {
                             </div>
                         )}
                         <div className='flex flex-col md:grid md:grid-cols-2 items-center'>
-                            <img className='w-80 lg:w-96 xl:my-8 lg:my-8 rounded-xl transition-transform duration-300 hover:scale-110' data-aos="flip-left" src='/ecommerceWebsite.png' />
+                            <img className='w-80 sm:w-[35rem] md:w-96 xl:my-8 lg:my-8 rounded-xl transition-transform duration-300 hover:scale-110' data-aos="flip-left" src='./ecommerceWebsite.png' />
                             <div className='px-4 sm:px-3 md:px-5 lg:px-0 xl:px-0 flex flex-col justify-center' data-aos="flip-right">
-                                <h1 className='font-bold pt-2 md:pt-0 text-white text-sm md:text-lg lg:text-xl xl:text-xl'>E-commmerce Website</h1>
+                                <h1 className='font-bold pt-2 md:pt-0 text-white text-sm sm:text-base md:text-lg lg:text-xl xl:text-xl'>E-commmerce Website</h1>
                                 <p className='hidden md:text-sm text-white lg:text-sm pt-2 xl:text-sm lg:block'>I developed a fully functional
                                     E-commerce website leveraging the MERN Stack (MongoDB, Express.js, React.js, Node.js). It contains a best
                                     user friendly interface and modern design. Users can create an account with secure login, explore all
@@ -121,9 +121,9 @@ const Projects = () => {
                             </div>
                         )}
                         <div className='flex flex-col md:grid md:grid-cols-2 items-center'>
-                            <img className='w-80 lg:w-96 xl:my-8 lg:my-8 rounded-xl transition-transform duration-300 hover:scale-110' data-aos="flip-left" src='/contractIQ.png' />
+                            <img className='w-80 sm:w-[35rem] md:w-96 xl:my-8 lg:my-8 rounded-xl transition-transform duration-300 hover:scale-110' data-aos="flip-left" src='./contractIQ.png' />
                             <div className='px-4 sm:px-3 md:px-5 lg:px-0 xl:px-0 flex flex-col justify-center' data-aos="flip-right">
-                                <h1 className='font-bold text-white text-sm md:text-lg lg:text-xl xl:text-xl pt-2 md:pt-0'>ContractIQ Front-End Website</h1>
+                                <h1 className='font-bold text-white text-sm sm:text-base md:text-lg lg:text-xl xl:text-xl pt-2 md:pt-0'>ContractIQ Front-End Website</h1>
                                 <p className='hidden md:text-sm text-white lg:text-sm xl:text-sm lg:block pt-2'>I developed a frontend
                                     project using React.js for my client, who requested a website named ContractIQ. The website
                                     provides valuable information and guidance about Ethereum smart contracts, offering users insights
@@ -160,9 +160,9 @@ const Projects = () => {
                             </div>
                         )}
                         <div className='flex flex-col md:grid md:grid-cols-2 items-center'>
-                            <img className='w-80 lg:w-96 xl:my-8 lg:my-8 rounded-xl transition-transform duration-300 hover:scale-110' data-aos="flip-left" src='/employeeManagement.png' />
+                            <img className='w-80 sm:w-[35rem] md:w-96 xl:my-8 lg:my-8 rounded-xl transition-transform duration-300 hover:scale-110' data-aos="flip-left" src='./employeeManagement.png' />
                             <div className='px-4 sm:px-3 md:px-5 lg:px-0 xl:px-0 flex flex-col justify-center' data-aos="flip-right">
-                                <h1 className='font-bold text-white text-sm md:text-lg lg:text-xl xl:text-xl pt-2 md:pt-0'>Employee Management Website</h1>
+                                <h1 className='font-bold text-white text-sm sm:text-base md:text-lg lg:text-xl xl:text-xl pt-2 md:pt-0'>Employee Management Website</h1>
                                 <p className='hidden md:text-sm text-white lg:text-sm xl:text-sm lg:block pt-2'>I developed an Employee
                                     Management System using the MERN stack, which allows secure login for both employees and admins, each
                                     with their personalized dashboards. Employees can apply for leave by specifying the leave type, days,
@@ -246,11 +246,11 @@ const Projects = () => {
                         {/* Project Content */}
                         <div className="flex flex-col md:grid md:grid-cols-2 items-center my-10">
                             <img
-                                className="lg:my-3 xl:my-9 w-80 lg:w-96 rounded-xl transition-transform duration-500 hover:scale-110 " data-aos="flip-left"
+                                className="lg:my-3 xl:my-9 w-80 sm:w-[35rem] md:w-96 rounded-xl transition-transform duration-500 hover:scale-110 " data-aos="flip-left"
                                 src="./restaurent2.jpg"
                             />
                             <div className="px-4 sm:px-3 md:px-5 lg:px-0 xl:px-0 flex flex-col justify-center" data-aos="flip-right">
-                                <h1 className="font-bold text-white text-sm md:text-lg lg:text-xl xl:text-xl pt-2 md:pt-0">Restaurent Website</h1>
+                                <h1 className="font-bold text-white text-sm sm:text-base md:text-lg lg:text-xl xl:text-xl pt-2 md:pt-0">Restaurent Website</h1>
                                 <p className="hidden md:text-sm lg:text-sm text-white xl:text-sm pt-2 lg:block">
                                     I developed a restaurant website using HTML, CSS, and JavaScript. The site features a modern design with a welcoming homepage, detailed menu, and an image gallery showcasing the restaurant's dishes. The contact page provides location, hours, and a form for inquiries. The website aims to enhance the restaurant's online presence and attract more customers.
                                 </p>
@@ -281,11 +281,11 @@ const Projects = () => {
 
                         <div className='flex flex-col md:grid md:grid-cols-2 items-center my-10'>
 
-                            <img className='w-80 lg:w-96 rounded-xl transition-transform duration-500 hover:scale-110' data-aos="flip-left" src='./quiz.png' />
+                            <img className='w-80 sm:w-[35rem] md:w-96 rounded-xl transition-transform duration-500 hover:scale-110' data-aos="flip-left" src='./quiz.png' />
 
                             <div className='px-4 sm:px-3 md:px-5 lg:px-0 xl:px-0 flex flex-col justify-center' data-aos="flip-right">
 
-                                <h1 className='font-bold text-sm text-white md:text-lg lg:text-xl xl:text-xl pt-2 md:pt-0'>Quiz Management App</h1>
+                                <h1 className='font-bold text-sm text-white md:text-lg sm:text-base lg:text-xl xl:text-xl pt-2 md:pt-0'>Quiz Management App</h1>
                                 <p className='hidden md:text-sm text-white lg:text-sm xl:text-sm lg:block pt-2'>I developed a Quiz Management App using Java with a GUI. The app allows users to create, manage,
                                     and take quizzes through an intuitive graphical interface. Key features include quiz creation, question management,
                                     and real-time scoring. The application aims to provide an efficient and user-friendly platform for both quiz administrators
@@ -317,11 +317,11 @@ const Projects = () => {
 
                         <div className='flex flex-col md:grid md:grid-cols-2 items-center mt-8 md:mt-20'>
 
-                            <img className='w-80 lg:w-96 rounded-xl transition-transform duration-300 hover:scale-110' data-aos="flip-left" src='./airline.jpg' />
+                            <img className='w-80 sm:w-[35rem] md:w-96 rounded-xl transition-transform duration-300 hover:scale-110' data-aos="flip-left" src='./airline.jpg' />
 
                             <div className='px-4 sm:px-3 md:px-5 lg:px-0 xl:px-0 flex flex-col justify-center' data-aos="flip-right">
 
-                                <h1 className='font-bold text-white text-sm md:text-lg lg:text-xl xl:text-xl pt-2 md:pt-0'>Airline Management Website</h1>
+                                <h1 className='font-bold text-white text-sm md:text-lg sm:text-base lg:text-xl xl:text-xl pt-2 md:pt-0'>Airline Management Website</h1>
                                 <p className='hidden md:text-sm text-white lg:text-sm xl:text-sm pt-2 lg:block'>I developed an Airline Management Website using Java with a GUI. The website provides a
                                     user-friendly interface for managing airline operations, including booking flights, managing passenger information,
                                     and scheduling. It features real-time updates and efficient data management, aiming to streamline airline operations
@@ -355,11 +355,11 @@ const Projects = () => {
 
                         <div className='flex flex-col md:grid md:grid-cols-2 items-center mt-4'>
 
-                            <img className='w-80 lg:my-16 xl:my-16 lg:w-96 rounded-xl transition-transform duration-300 hover:scale-110' data-aos="flip-left" src='./calculator.png' />
+                            <img className='w-80 sm:w-[35rem] md:w-96 lg:my-16 xl:my-16 rounded-xl transition-transform duration-300 hover:scale-110' data-aos="flip-left" src='./calculator.png' />
 
                             <div className='px-4 sm:px-3 md:px-5 lg:px-0 xl:px-0 flex flex-col justify-center' data-aos="flip-right">
 
-                                <h1 className='font-bold text-white text-sm md:text-lg lg:text-xl xl:text-xl pt-2 md:pt-0'>Calculator App</h1>
+                                <h1 className='font-bold text-white text-sm sm:text-base md:text-lg lg:text-xl xl:text-xl pt-2 md:pt-0'>Calculator App</h1>
                                 <p className='hidden md:text-sm text-white lg:text-sm pt-2 lg:block'>I have created a stylish and functional calculator
                                     using Next.js and Tailwind CSS. It features a clean and responsive design, making it easy to perform
                                     basic calculations on any device. This project demonstrates my skills in combining modern frameworks

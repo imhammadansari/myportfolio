@@ -24,7 +24,7 @@ const Bannerr = () => {
   return (
     <>
     <div className='w-full h-[30rem] flex flex-col md:flex-row bg-black'>
-        <div className='h-full flex flex-col mt-10 md:mx-12 md:my-20 lg:mx-24 lg:my-36 xl:mx-24 xl:my-36 w-full md:w-1/2 text-center md:text-start items-center md:items-start'>
+        <div className='h-full flex flex-col md:mx-12 lg:mx-24 xl:mx-24 w-full md:w-1/2 text-center md:text-start items-center justify-center md:items-start'>
         <h1 className='text-base md:text-xl text-white lg:text-3xl xl:text-3xl font-bold' data-aos="fade-left">
             Hi, I'm &lt;/&gt; <br/> <span className="text-3xl md:text-4xl lg:text-6xl xl:text-6xl font-bold animate__animated 
             animate__backInLeft bg-gradient-to-r from-[#d062a0] to-[#5c0bed] bg-clip-text text-transparent">
@@ -45,8 +45,8 @@ const Bannerr = () => {
 
         </div>
 
-        <div className='flex items-center justify-center md:items-end'>
-        <div className="w-[25rem] md:w-[36rem]">{View}</div>
+        <div className='flex items-center justify-center'>
+        <div className="w-[25rem] lg:w-[36rem]">{View}</div>
 
         </div>
 

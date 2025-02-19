@@ -78,7 +78,7 @@ const Contact = () => {
                             <input 
                                 type='text' 
                                 placeholder='Name' required name='name'
-                                className='p-2 w-full lg:w-[31rem] bg-white text-white bg-opacity-15'
+                                className='p-2 w-full md:w-[20rem] lg:w-[31rem] bg-white text-white bg-opacity-15'
                             />
                             <input 
                                 type='text' 

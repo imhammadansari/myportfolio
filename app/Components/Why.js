@@ -40,7 +40,7 @@ const Why = () => {
           </div>
 
           <div data-aos="zoom-out" className='w-[22rem] text-white p-1 lg:p-5 xl:p-5 text-center  mt-4 lg:mt-6 xl:mt-6 transition-transform duration-300 hover:scale-90'>
-            <img className='w-[3.5rem] bg-gradient-to-r from-[#d062a0] to-[#5e0bed4a] p-3 rounded-lg lg:w-[5rem] xl:w-[5rem] mx-auto' src='./flexibility.png' alt='Flexible' />
+            <img className='w-[3.5rem] bg-gradient-to-r from-[#d062a0] to-[#5c0bed] p-3 rounded-lg lg:w-[5rem] xl:w-[5rem] mx-auto' src='./flexibility.png' alt='Flexible' />
             <h3 className='text-xs sm:text-sm md:text-base lg:text-lg xl-text-lg font-bold mt-1'>Flexible</h3>
             <p className='text-xs hidden md:block'>Adapting to your project’s unique requirements with seamless flexibility. From startups to enterprises, I tailor solutions that fit!"</p>
           </div>
