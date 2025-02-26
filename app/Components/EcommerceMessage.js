@@ -39,7 +39,7 @@ const EcommerceMessage = ({hideEcommerceMessage}) => {
                                  and secure shopping experience from start to finish.
               </p>
 
-              <div className='flex justify-center pb-4 mt-2'>
+              <div className='flex justify-center gap-2 pb-4 mt-2'>
 
                 <button
                                         className='w-[4.5rem] h-9 text-xs sm:w-[6rem] sm:text-sm md:md:w-[6rem] md:text-sm cursor-pointer hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
@@ -50,6 +50,16 @@ const EcommerceMessage = ({hideEcommerceMessage}) => {
                                     >
                                         Live Demo
                                     </button>
+
+                                    <button
+        className='w-[4.5rem] h-9 text-xs sm:w-[6rem] sm:text-sm md:md:w-[6rem] md:text-sm cursor-pointer hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
+    text-white bg-gradient-to-r from-[#d062a0] to-[#5c0bed] rounded mt-2'
+        onClick={() => {
+            window.location.href = '/see-online/ecommerce';
+        }}
+    >
+        Watch Online
+    </button>
               </div>
               
 

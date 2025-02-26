@@ -1,5 +1,4 @@
 
-
 "use client";
 import React, { useEffect, useRef, useState } from 'react';
 import 'animate.css';
@@ -91,7 +90,7 @@ const Projects = () => {
                                     product categories, browse products in each category, add items to their cart, and proceed to checkout.
                                     Once the order is placed, they can see the details of the Pending orders. This project showcases a smooth
                                     and secure shopping experience from start to finish.</p>
-                                <div className='flex justify-center md:justify-start'>
+                                <div className='flex justify-center gap-4 md:justify-start'>
                                     <button onClick={showEcommerceMessage} className='w-[5rem] h-8 text-xs sm:w-[5rem] sm:text-sm md:w-[6rem] md:text-sm lg:hidden xl:hidden hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
     text-white bg-gradient-to-r from-[#d062a0] to-[#5c0bed] rounded mt-2'>Read More</button>
                                     <button
@@ -103,6 +102,16 @@ const Projects = () => {
                                     >
                                         Live Demo
                                     </button>
+
+                                    <button
+        className='hidden lg:inline-block xl:inline-block lg:w-28 lg:h-10 lg:text-base xl:w-28 xl:h-10 xl:text-base hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
+        text-white bg-gradient-to-r from-[#d062a0] to-[#5c0bed] rounded mt-2'
+        onClick={() => {
+            window.location.href = '/see-online/ecommerce';
+        }}
+    >
+        Watch Online
+    </button>
 
                                 </div>
                             </div>
@@ -142,6 +151,9 @@ const Projects = () => {
                                         Live Demo
                                     </button>
 
+                                    
+                                    
+
                                 </div>
                             </div>
                         </div>
@@ -171,7 +183,7 @@ const Projects = () => {
                                     and contact information. Admins have the ability to register, update, or delete employee records,
                                     as well as manage departments. Additionally, admins can view and manage all employee leave
                                     requests, and they hold the authority to approve or reject leave requests.</p>
-                                <div className='flex justify-center md:justify-start'>
+                                <div className='flex justify-center gap-4 md:justify-start'>
                                     <button onClick={showemployeeManagementMessage} className='w-[5rem] h-8 text-xs sm:w-[5rem] sm:text-sm md:w-[6rem] md:text-sm lg:hidden xl:hidden hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
     text-white bg-gradient-to-r from-[#d062a0] to-[#5c0bed] rounded mt-2'>Read More</button>
                                     <button
@@ -183,6 +195,16 @@ const Projects = () => {
                                     >
                                         Live Demo
                                     </button>
+
+                                    <button
+        className='hidden lg:inline-block xl:inline-block lg:w-28 lg:h-10 lg:text-base xl:w-28 xl:h-10 xl:text-base hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
+        text-white bg-gradient-to-r from-[#d062a0] to-[#5c0bed] rounded mt-2'
+        onClick={() => {
+            window.location.href = '/see-online/employee';
+        }}
+    >
+        Watch Online
+    </button>
 
                                 </div>
                             </div>
