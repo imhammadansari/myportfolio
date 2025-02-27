@@ -46,9 +46,9 @@ const About = () => {
 </h1>
 
           <p className='text-xs text-white sm:text-base md:text-lg lg:text-lg xl:text-lg sm:mt-2 lg:mt-3 xl:mt-3' data-aos="fade-down">
-            I am a MERN stack developer specializing in front-end development. I create responsive, user-friendly websites with intuitive and visually appealing interfaces. Passionate about continuous learning, I stay updated on the latest tools and techniques to enhance the web experience.
+            I am a MERN stack developer specializing in front-end and back-end development. I create responsive, user-friendly websites with intuitive and visually appealing interfaces. Passionate about continuous learning, I stay updated on the latest tools and techniques to enhance the web experience.
           </p>
-          <a href="./CV-Hammad Ansari.pdf" download>
+          <a href="./Resume - Hammad Ansari.pdf" download>
   <button data-aos="fade-up" 
     className='w-16 h-8 md:font-bold lg:font-bold xl:font-bold text-xs mt-4 sm:w-20 sm:h-8 sm:text-sm md:w-24 md:h-9 md:text-base lg:w-28 lg:h-10 lg:text-lg xl:w-28 xl:h-10 xl:text-lg rounded 
     hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
