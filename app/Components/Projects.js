@@ -13,6 +13,7 @@ import CalculatorMessage from './CalculatorMessage';
 import ToDoListMessage from './ToDoListMessage';
 import ContractIQMessage from './ContractIQMessage';
 import EmployeeManagementMessage from './EmployeeManagementMessage';
+import Link from 'next/link';
 
 // ..
 
@@ -103,15 +104,15 @@ const Projects = () => {
                                         Live Demo
                                     </button>
 
+                                    <Link href="/ecommerce">
                                     <button
         className='hidden lg:inline-block xl:inline-block lg:w-28 lg:h-10 lg:text-base xl:w-28 xl:h-10 xl:text-base hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
         text-white bg-gradient-to-r from-[#d062a0] to-[#5c0bed] rounded mt-2'
-        onClick={() => {
-            window.location.href = '/ecommerce';
-        }}
+        
     >
         Watch Online
     </button>
+    </Link>
 
                                 </div>
                             </div>
@@ -196,15 +197,15 @@ const Projects = () => {
                                         Live Demo
                                     </button>
 
+                                    <Link href="/employee">
                                     <button
         className='hidden lg:inline-block xl:inline-block lg:w-28 lg:h-10 lg:text-base xl:w-28 xl:h-10 xl:text-base hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
         text-white bg-gradient-to-r from-[#d062a0] to-[#5c0bed] rounded mt-2'
-        onClick={() => {
-            window.location.href = '/employee';
-        }}
+        
     >
         Watch Online
     </button>
+    </Link>
 
                                 </div>
                             </div>

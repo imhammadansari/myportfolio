@@ -51,15 +51,16 @@ const EcommerceMessage = ({hideEcommerceMessage}) => {
                                         Live Demo
                                     </button>
 
+                                    
+                                    <Link href="/ecommerce">
                                     <button
-        className='w-[4.5rem] h-9 text-xs sm:w-[6rem] sm:text-sm md:md:w-[6rem] md:text-sm cursor-pointer hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
+        className='w-[5rem] h-9 text-xs sm:w-[6.5rem] sm:text-sm md:md:w-[6.5rem] md:text-sm cursor-pointer hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
     text-white bg-gradient-to-r from-[#d062a0] to-[#5c0bed] rounded mt-2'
-        onClick={() => {
-            window.location.href = '/see-online/ecommerce';
-        }}
+        
     >
         Watch Online
     </button>
+    </Link>
               </div>
               
 
