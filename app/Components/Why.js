@@ -17,7 +17,7 @@ const Why = () => {
   return (
     <>
       <div className='w-full bg-black bg-opacity-95'>
-        <div className='text-center mt-2 lg:mt-4 xl:mt-4 pt-4 lg:pt-8 xl:pt-8'>
+        <div className='text-center mt-5 lg:mt-4 xl:mt-4 pt-4 lg:pt-8 xl:pt-8'>
           <h1 className='text-xl text-white sm:text-2xl md:text-3xl lg:text-4xl xl:text-4xl font-bold'>
             Why <span className='bg-gradient-to-r from-[#d062a0] to-[#5c0bed] bg-clip-text text-transparent'>Me</span>
           </h1>
@@ -26,7 +26,7 @@ const Why = () => {
           </h1>
         </div>
 
-        <div className='mx-4 first-letter:pt-4 gap-8 lg:pt-8 xl:pt-8 mt-2 lg:mt-4 flex justify-center'>
+        <div className='mx-4 first-letter:pt-4 gap-8 lg:pt-8 xl:pt-8 mt-1 lg:mt-4 flex justify-center'>
           <div data-aos="fade-down" className='w-[22rem] text-white p-1 lg:p-5 xl:p-5 text-center mt-4 lg:mt-6 xl:mt-6 transition-transform duration-300 hover:scale-90'>
             <img className='w-[3.5rem] bg-gradient-to-r from-[#d062a0] to-[#5c0bed] p-3 rounded-lg lg:w-[5rem] xl:w-[5rem] mx-auto' src='./24-hours.png' alt='24/7 Support' />
             <h3 className='text-xs sm:text-sm md:text-base lg:text-lg xl:text-lg font-bold mt-1'>24/7 Support</h3>
