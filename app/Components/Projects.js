@@ -14,6 +14,7 @@ import ToDoListMessage from './ToDoListMessage';
 import ContractIQMessage from './ContractIQMessage';
 import EmployeeManagementMessage from './EmployeeManagementMessage';
 import Link from 'next/link';
+import CrowdFundingMessage from './CrowdFundingMessage';
 
 // ..
 
@@ -23,6 +24,7 @@ const Projects = () => {
     const [quizMessage, setQuizMessage] = useState(false);
     const [airlineMessage, setAirlineMessage] = useState(false);
     const [ecommerceMessage, setEcommerceMessage] = useState(false);
+    const [crowdFundingMessage, setcrowdFundingMessage] = useState(false);
     const [contractIQMessage, setContractIQMessage] = useState(false);
     const [employeeManagementMessage, setemployeeManagementMessage] = useState(false);
     const [calculatorMessage, setcalculatorMessage] = useState(false);
@@ -45,8 +47,8 @@ const Projects = () => {
     const hideEcommerceMessage = () => setEcommerceMessage(false);
     const showCalculatorMessage = () => setcalculatorMessage(!calculatorMessage);
     const hideCalculatorMessage = () => setcalculatorMessage(false);
-    const showToDoListMessage = () => settoDoListMessage(!toDoListMessage);
-    const hideToDoListMessage = () => settoDoListMessage(false);
+    const showCrowdFundingMessage = () => setcrowdFundingMessage(!calculatorMessage);
+    const hideCrowdFundingMessage = () => setcrowdFundingMessage(false);
 
     useEffect(() => {
         AOS.init({
@@ -73,55 +75,56 @@ const Projects = () => {
 
                 <div className='w-auto mx-2 sm:mx-5 md:mx-10 lg:mx-20 xl:mx-20 mt-5 lg:mt-10 xl:mt-10'>
                     <div className='relative'>
-                        {ecommerceMessage && (
+                        {crowdFundingMessage && (
                             <div className="fixed inset-0 w-full h-screen bg-black opacity-90 z-40"> </div>
                         )}
-                        {ecommerceMessage && (
+                        {crowdFundingMessage && (
                             <div className="fixed inset-0 w-full h-screen flex justify-center items-center z-50">
-                                <EcommerceMessage hideEcommerceMessage={hideEcommerceMessage} />
+                                <CrowdFundingMessage hideCrowdFundingMessage={hideCrowdFundingMessage} />
                             </div>
                         )}
                         <div className='flex flex-col md:grid md:grid-cols-2 items-center'>
-                            <img className='w-80 sm:w-[35rem] md:w-96 xl:my-8 lg:my-8 rounded-xl transition-transform duration-300 hover:scale-110' data-aos="flip-left" src='./ecommerceWebsite.png' />
+                            <img className='w-80 sm:w-[35rem] md:w-96 xl:my-8 lg:my-8 rounded-xl transition-transform duration-300 hover:scale-110' data-aos="flip-left" src='./crowdFunding.png' />
                             <div className='px-4 sm:px-3 md:px-5 lg:px-0 xl:px-0 flex flex-col justify-center' data-aos="flip-right">
-                                <h1 className='font-bold pt-2 md:pt-0 text-white text-sm sm:text-base md:text-lg lg:text-xl xl:text-xl'>E-commmerce Website</h1>
-                                <p className='hidden md:text-sm text-white lg:text-sm pt-2 xl:text-sm lg:block'>I developed a fully functional
-                                    E-commerce website leveraging the MERN Stack (MongoDB, Express.js, React.js, Node.js). It contains a best
-                                    user friendly interface and modern design. Users can create an account with secure login, explore all
-                                    product categories, browse products in each category, add items to their cart, and proceed to checkout.
-                                    Once the order is placed, they can see the details of the Pending orders. This project showcases a smooth
-                                    and secure shopping experience from start to finish.</p>
+                                <h1 className='font-bold pt-2 md:pt-0 text-white text-sm sm:text-base md:text-lg lg:text-xl xl:text-xl'>CrowdFunding Website</h1>
+                                <p className='hidden md:text-sm text-white lg:text-sm pt-2 xl:text-sm lg:block'>CrowdFunding is a MERN
+                                    stack-based funding platform designed to support students in need of financial assistance for
+                                    their education. Students can create donation requests by sharing their academic details and funding
+                                    needs, while donors can browse these requests and contribute securely. The platform includes an
+                                    admin panel to manage student requests, donor activities, and payment processing, ensuring
+                                    transparency and efficiency. This Platform connects generous donors with deserving students, making
+                                    education accessible to all.</p>
                                 <div className='flex justify-center md:justify-start'>
-    <button onClick={showEcommerceMessage} 
-        className='w-[5rem] h-8 text-xs sm:w-[5rem] sm:text-sm md:w-[6rem] md:text-sm lg:hidden xl:hidden 
+                                    <button onClick={showCrowdFundingMessage}
+                                        className='w-[5rem] h-8 text-xs sm:w-[5rem] sm:text-sm md:w-[6rem] md:text-sm lg:hidden xl:hidden 
         hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
         bg-gradient-to-r from-[#d062a0] to-[#5c0bed] text-white rounded mt-2'
-    >
-        Read More
-    </button>
-</div>
-<div className='flex justify-center gap-4 md:justify-start'>
+                                    >
+                                        Read More
+                                    </button>
+                                </div>
+                                <div className='flex justify-center gap-4 md:justify-start'>
 
-     
+
                                     <button
                                         className='hidden lg:inline-block xl:inline-block lg:w-24 lg:h-10 lg:text-base xl:w-24 xl:h-10 xl:text-base hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
     text-white bg-gradient-to-r from-[#d062a0] to-[#5c0bed] rounded mt-2'
                                         onClick={() => {
-                                            window.location.href = 'https://mern-ecommerce-rnup.onrender.com/home';
+                                            window.location.href = 'https://crowdfunding-5ttm.onrender.com/home';
                                         }}
                                     >
                                         Live Demo
                                     </button>
 
-                                    <Link href="/ecommerce">
-                                    <button
-        className='hidden lg:inline-block xl:inline-block lg:w-28 lg:h-10 lg:text-base xl:w-28 xl:h-10 xl:text-base hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
+                                    <Link href="/crowdFunding">
+                                        <button
+                                            className='hidden lg:inline-block xl:inline-block lg:w-28 lg:h-10 lg:text-base xl:w-28 xl:h-10 xl:text-base hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
         text-white bg-gradient-to-r from-[#d062a0] to-[#5c0bed] rounded mt-2'
-        
-    >
-        Watch Online
-    </button>
-    </Link>
+
+                                        >
+                                            Watch Online
+                                        </button>
+                                    </Link>
 
                                 </div>
                             </div>
@@ -161,8 +164,8 @@ const Projects = () => {
                                         Live Demo
                                     </button>
 
-                                    
-                                    
+
+
 
                                 </div>
                             </div>
@@ -193,18 +196,76 @@ const Projects = () => {
                                     and contact information. Admins have the ability to register, update, or delete employee records,
                                     as well as manage departments. Additionally, admins can view and manage all employee leave
                                     requests, and they hold the authority to approve or reject leave requests.</p>
-                                    <div className='flex justify-center md:justify-start'>
-    <button onClick={showemployeeManagementMessage} 
-        className='w-[5rem] h-8 text-xs sm:w-[5rem] sm:text-sm md:w-[6rem] md:text-sm lg:hidden xl:hidden 
+                                <div className='flex justify-center md:justify-start'>
+                                    <button onClick={showemployeeManagementMessage}
+                                        className='w-[5rem] h-8 text-xs sm:w-[5rem] sm:text-sm md:w-[6rem] md:text-sm lg:hidden xl:hidden 
         hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
         bg-gradient-to-r from-[#d062a0] to-[#5c0bed] text-white rounded mt-2'
-    >
-        Read More
-    </button>
-</div>
-<div className='flex justify-center gap-4 md:justify-start'>
+                                    >
+                                        Read More
+                                    </button>
+                                </div>
+                                <div className='flex justify-center gap-4 md:justify-start'>
 
-     
+
+                                    <button
+                                        className='hidden lg:inline-block xl:inline-block lg:w-24 lg:h-10 lg:text-base xl:w-24 xl:h-10 xl:text-base hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
+    text-white bg-gradient-to-r from-[#d062a0] to-[#5c0bed] rounded mt-2'
+                                        onClick={() => {
+                                            window.location.href = 'https://employeemanagement-c46a.onrender.com/home';
+                                        }}
+                                    >
+                                        Live Demo
+                                    </button>
+
+                                    <Link href="/ecommerce">
+                                        <button
+                                            className='hidden lg:inline-block xl:inline-block lg:w-28 lg:h-10 lg:text-base xl:w-28 xl:h-10 xl:text-base hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
+        text-white bg-gradient-to-r from-[#d062a0] to-[#5c0bed] rounded mt-2'
+
+                                        >
+                                            Watch Online
+                                        </button>
+                                    </Link>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className='w-auto mx-2 sm:mx-5 md:mx-10 lg:mx-20 xl:mx-20 mt-5 lg:mt-10 xl:mt-10'>
+                    <div className='relative'>
+                        {ecommerceMessage && (
+                            <div className="fixed inset-0 w-full h-screen bg-black opacity-90 z-40"> </div>
+                        )}
+                        {ecommerceMessage && (
+                            <div className="fixed inset-0 w-full h-screen flex justify-center items-center z-50">
+                                <EcommerceMessage hideEcommerceMessage={hideEcommerceMessage} />
+                            </div>
+                        )}
+                        <div className='flex flex-col md:grid md:grid-cols-2 items-center'>
+                            <img className='w-80 sm:w-[35rem] md:w-96 xl:my-8 lg:my-8 rounded-xl transition-transform duration-300 hover:scale-110' data-aos="flip-left" src='./ecommerceWebsite.png' />
+                            <div className='px-4 sm:px-3 md:px-5 lg:px-0 xl:px-0 flex flex-col justify-center' data-aos="flip-right">
+                                <h1 className='font-bold pt-2 md:pt-0 text-white text-sm sm:text-base md:text-lg lg:text-xl xl:text-xl'>E-commmerce Website</h1>
+                                <p className='hidden md:text-sm text-white lg:text-sm pt-2 xl:text-sm lg:block'>I developed a fully functional
+                                    E-commerce website leveraging the MERN Stack (MongoDB, Express.js, React.js, Node.js). It contains a best
+                                    user friendly interface and modern design. Users can create an account with secure login, explore all
+                                    product categories, browse products in each category, add items to their cart, and proceed to checkout.
+                                    Once the order is placed, they can see the details of the Pending orders. This project showcases a smooth
+                                    and secure shopping experience from start to finish.</p>
+                                <div className='flex justify-center md:justify-start'>
+                                    <button onClick={showEcommerceMessage}
+                                        className='w-[5rem] h-8 text-xs sm:w-[5rem] sm:text-sm md:w-[6rem] md:text-sm lg:hidden xl:hidden 
+        hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
+        bg-gradient-to-r from-[#d062a0] to-[#5c0bed] text-white rounded mt-2'
+                                    >
+                                        Read More
+                                    </button>
+                                </div>
+                                <div className='flex justify-center gap-4 md:justify-start'>
+
+
                                     <button
                                         className='hidden lg:inline-block xl:inline-block lg:w-24 lg:h-10 lg:text-base xl:w-24 xl:h-10 xl:text-base hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
     text-white bg-gradient-to-r from-[#d062a0] to-[#5c0bed] rounded mt-2'
@@ -216,14 +277,14 @@ const Projects = () => {
                                     </button>
 
                                     <Link href="/ecommerce">
-                                    <button
-        className='hidden lg:inline-block xl:inline-block lg:w-28 lg:h-10 lg:text-base xl:w-28 xl:h-10 xl:text-base hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
+                                        <button
+                                            className='hidden lg:inline-block xl:inline-block lg:w-28 lg:h-10 lg:text-base xl:w-28 xl:h-10 xl:text-base hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
         text-white bg-gradient-to-r from-[#d062a0] to-[#5c0bed] rounded mt-2'
-        
-    >
-        Watch Online
-    </button>
-    </Link>
+
+                                        >
+                                            Watch Online
+                                        </button>
+                                    </Link>
 
                                 </div>
                             </div>
@@ -416,7 +477,7 @@ const Projects = () => {
 
                     </div>
 
-                    
+
 
                 </div>
             </div >
