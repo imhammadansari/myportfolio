@@ -106,19 +106,9 @@ const Projects = () => {
                                 <div className='flex justify-center gap-4 md:justify-start'>
 
 
-                                    <button
-                                        className='hidden lg:inline-block xl:inline-block lg:w-24 lg:h-10 lg:text-base xl:w-24 xl:h-10 xl:text-base hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
-    text-white bg-gradient-to-r from-[#d062a0] to-[#5c0bed] rounded mt-2'
-                                        onClick={() => {
-                                            window.location.href = 'https://crowdfunding-5ttm.onrender.com/home';
-                                        }}
-                                    >
-                                        Live Demo
-                                    </button>
-
                                     <Link href="/crowdFunding">
                                         <button
-                                            className='hidden lg:inline-block xl:inline-block lg:w-28 lg:h-10 lg:text-base xl:w-28 xl:h-10 xl:text-base hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
+                                            disabled className='hidden lg:inline-block xl:inline-block lg:w-28 lg:h-10 lg:text-base xl:w-28 xl:h-10 xl:text-base hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
         text-white bg-gradient-to-r from-[#d062a0] to-[#5c0bed] rounded mt-2'
 
                                         >
@@ -208,15 +198,7 @@ const Projects = () => {
                                 <div className='flex justify-center gap-4 md:justify-start'>
 
 
-                                    <button
-                                        className='hidden lg:inline-block xl:inline-block lg:w-24 lg:h-10 lg:text-base xl:w-24 xl:h-10 xl:text-base hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
-    text-white bg-gradient-to-r from-[#d062a0] to-[#5c0bed] rounded mt-2'
-                                        onClick={() => {
-                                            window.location.href = 'https://employeemanagement-c46a.onrender.com/home';
-                                        }}
-                                    >
-                                        Live Demo
-                                    </button>
+
 
                                     <Link href="/ecommerce">
                                         <button
@@ -266,15 +248,7 @@ const Projects = () => {
                                 <div className='flex justify-center gap-4 md:justify-start'>
 
 
-                                    <button
-                                        className='hidden lg:inline-block xl:inline-block lg:w-24 lg:h-10 lg:text-base xl:w-24 xl:h-10 xl:text-base hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
-    text-white bg-gradient-to-r from-[#d062a0] to-[#5c0bed] rounded mt-2'
-                                        onClick={() => {
-                                            window.location.href = 'https://mern-ecommerce-rnup.onrender.com/home';
-                                        }}
-                                    >
-                                        Live Demo
-                                    </button>
+
 
                                     <Link href="/ecommerce">
                                         <button
