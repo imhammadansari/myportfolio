@@ -15,6 +15,7 @@ import ContractIQMessage from './ContractIQMessage';
 import EmployeeManagementMessage from './EmployeeManagementMessage';
 import Link from 'next/link';
 import CrowdFundingMessage from './CrowdFundingMessage';
+import AutomotiveMessage from './AutomotiveMessage';
 
 // ..
 
@@ -25,16 +26,14 @@ const Projects = () => {
     const [airlineMessage, setAirlineMessage] = useState(false);
     const [ecommerceMessage, setEcommerceMessage] = useState(false);
     const [crowdFundingMessage, setcrowdFundingMessage] = useState(false);
+    const [automovieMessage, setAutomovieMessage] = useState(false);
     const [contractIQMessage, setContractIQMessage] = useState(false);
     const [employeeManagementMessage, setemployeeManagementMessage] = useState(false);
     const [calculatorMessage, setcalculatorMessage] = useState(false);
-    const [toDoListMessage, settoDoListMessage] = useState(false);
 
 
     const showRestaurentMessage = () => setRestaurentMessage(!restaurentMessage);
     const hideMessage = () => setRestaurentMessage(false);
-    const showGymMessage = () => setGymMessage(!gymMessage);
-    const hideGymMessage = () => setGymMessage(false);
     const showQuizMessage = () => setQuizMessage(!quizMessage);
     const hideQuizMessage = () => setQuizMessage(false);
     const showAirMessage = () => setAirlineMessage(!airlineMessage);
@@ -49,6 +48,8 @@ const Projects = () => {
     const hideCalculatorMessage = () => setcalculatorMessage(false);
     const showCrowdFundingMessage = () => setcrowdFundingMessage(!calculatorMessage);
     const hideCrowdFundingMessage = () => setcrowdFundingMessage(false);
+    const showAutomotiveMessage = () => setAutomovieMessage(!automovieMessage);
+    const hideAutomotiveMessage = () => setAutomovieMessage(false);
 
     useEffect(() => {
         AOS.init({
@@ -108,7 +109,57 @@ const Projects = () => {
 
                                     <Link href="/crowdFunding">
                                         <button
-                                            disabled className='hidden lg:inline-block xl:inline-block lg:w-28 lg:h-10 lg:text-base xl:w-28 xl:h-10 xl:text-base hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
+                                            disabled className='hidden lg:inline-block xl:inline-block lg:w-32 lg:h-10 lg:text-base xl:w-32 xl:h-10 xl:text-base hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
+        text-white bg-gradient-to-r from-[#d062a0] to-[#5c0bed] rounded mt-2'
+
+                                        >
+                                            Watch Online
+                                        </button>
+                                    </Link>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className='w-auto mx-2 sm:mx-5 md:mx-10 lg:mx-20 xl:mx-20 mt-5 lg:mt-10 xl:mt-10'>
+                    <div className='relative'>
+                        {automovieMessage && (
+                            <div className="fixed inset-0 w-full h-screen bg-black opacity-90 z-40"> </div>
+                        )}
+                        {automovieMessage && (
+                            <div className="fixed inset-0 w-full h-screen flex justify-center items-center z-50">
+                                <AutomotiveMessage hideAutomotiveMessage={hideAutomotiveMessage} />
+                            </div>
+                        )}
+                        <div className='flex flex-col md:grid md:grid-cols-2 items-center'>
+                            <img className='w-80 sm:w-[35rem] md:w-96 xl:my-8 lg:my-8 rounded-xl transition-transform duration-300 hover:scale-110' data-aos="flip-left" src='./automotiveImage.png' />
+                            <div className='px-4 sm:px-3 md:px-5 lg:px-0 xl:px-0 flex flex-col justify-center' data-aos="flip-right">
+                                <h1 className='font-bold pt-2 md:pt-0 text-white text-sm sm:text-base md:text-lg lg:text-xl xl:text-xl'>Automotive Marketplace</h1>
+                                <p className='hidden md:text-sm text-white lg:text-sm pt-2 xl:text-sm lg:block'>The Automotive 
+                                    Marketplace is a full-stack web application developed using the MERN Stack (MongoDB, Express.js, 
+                                    React.js, and Node.js). This platform connects car owners and buyers in a seamless and user-friendly
+                                     environment. Car owners can easily create listings by submitting their vehicle details, including 
+                                     make, model, price, and images. Buyers can browse through the listed vehicles, filter based on
+                                      their preferences, and contact owners directly for inquiries.
+
+The platform includes an admin dashboard where the administrator has full control over vehicle listings, with the ability to create, read, update, and delete (CRUD) any entry. The application ensures smooth user interaction, real-time data updates, and secure backend operations, making it an efficient solution for online vehicle trading.</p>
+                                <div className='flex justify-center md:justify-start'>
+                                    <button onClick={showAutomotiveMessage}
+                                        className='w-[5rem] h-8 text-xs sm:w-[5rem] sm:text-sm md:w-[6rem] md:text-sm lg:hidden xl:hidden 
+        hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
+        bg-gradient-to-r from-[#d062a0] to-[#5c0bed] text-white rounded mt-2'
+                                    >
+                                        Read More
+                                    </button>
+                                </div>
+                                <div className='flex justify-center gap-4 md:justify-start'>
+
+
+                                    <Link href="/crowdFunding">
+                                        <button
+                                            disabled className='hidden lg:inline-block xl:inline-block lg:w-28 lg:h-10 lg:text-base xl:w-32 xl:h-10 xl:text-base hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
         text-white bg-gradient-to-r from-[#d062a0] to-[#5c0bed] rounded mt-2'
 
                                         >
@@ -145,7 +196,7 @@ const Projects = () => {
                                     <button onClick={showContractIQMessage} className='w-[5rem] h-8 text-xs sm:w-[5rem] sm:text-sm md:w-[6rem] md:text-sm lg:hidden xl:hidden hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
     text-white bg-gradient-to-r from-[#d062a0] to-[#5c0bed] rounded mt-2'>Read More</button>
                                     <button
-                                        className='hidden lg:inline-block xl:inline-block lg:w-24 lg:h-10 lg:text-base xl:w-24 xl:h-10 xl:text-base hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
+                                        className='hidden lg:inline-block xl:inline-block lg:w-24 lg:h-10 lg:text-base xl:w-28 xl:h-10 xl:text-base hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
     text-white bg-gradient-to-r from-[#d062a0] to-[#5c0bed] rounded mt-2'
                                         onClick={() => {
                                             window.location.href = 'https://contract-iq-drab.vercel.app/home';
@@ -202,7 +253,7 @@ const Projects = () => {
 
                                     <Link href="/ecommerce">
                                         <button
-                                            className='hidden lg:inline-block xl:inline-block lg:w-28 lg:h-10 lg:text-base xl:w-28 xl:h-10 xl:text-base hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
+                                            className='hidden lg:inline-block xl:inline-block lg:w-28 lg:h-10 lg:text-base xl:w-32 xl:h-10 xl:text-base hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
         text-white bg-gradient-to-r from-[#d062a0] to-[#5c0bed] rounded mt-2'
 
                                         >
@@ -252,7 +303,7 @@ const Projects = () => {
 
                                     <Link href="/ecommerce">
                                         <button
-                                            className='hidden lg:inline-block xl:inline-block lg:w-28 lg:h-10 lg:text-base xl:w-28 xl:h-10 xl:text-base hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
+                                            className='hidden lg:inline-block xl:inline-block lg:w-28 lg:h-10 lg:text-base xl:w-32 xl:h-10 xl:text-base hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
         text-white bg-gradient-to-r from-[#d062a0] to-[#5c0bed] rounded mt-2'
 
                                         >
@@ -267,33 +318,7 @@ const Projects = () => {
                 </div>
 
                 <div className='w-auto mx-2 sm:mx-5 md:mx-10 lg:mx-20 xl:mx-20 mt-5 lg:mt-10 xl:mt-10'>
-                    {/* <div className='relative'>
-                        {gymMessage && (
-                            <div className="fixed inset-0 w-full h-screen bg-black opacity-90 z-40"> </div>
-                        )}
-                        {gymMessage && (
-                            <div className="fixed inset-0 w-full h-screen flex justify-center items-center z-50">
-                                <GymMessage hideGymMessage={hideGymMessage} />
-                            </div>
-                        )}
-                        <div className='grid grid-cols-2'>
-                            <img className='lg:w-96 lg:my-2 xl:my-8 rounded-xl transition-transform duration-300 hover:scale-110' data-aos="flip-left" src='./gym.png' />
-                            <div className='px-4 sm:px-3 md:px-5 lg:px-0 xl:px-0 flex flex-col justify-center' data-aos="flip-right">
-                                <h1 className='font-bold text-white text-sm md:text-lg lg:text-xl xl:text-xl'>Gym Management Website</h1>
-                                <p className='hidden md:text-sm text-white lg:text-base xl:text-base lg:block'>I developed a Gym Management Website using MERN Stack (MongoDB, Express.js, React.js, Node.js). The website offers a sleek and responsive design, enabling users to manage memberships, book classes, and track their fitness progress. It provides a seamless user experience with real-time updates and efficient data handling, aiming to enhance gym operations and member engagement.
-
-                                </p>
-                                <p className='font-bold hidden md:text-sm lg:text-base xl:text-base lg:block'>But, It is not completed yet, Working in progress</p>
-                                <div>
-                                    <button onClick={showGymMessage} className='w-[4.5rem] h-8 text-xs sm:w-[5rem] sm:text-sm md:w-[6rem] md:text-sm lg:hidden xl:hidden bg-sky-600 text-white rounded mt-2 hover:bg-white hover:text-sky-600'>Read More</button>
-                                    <button className='hidden lg:inline-block xl:inline-block lg:w-24 lg:h-10 lg:text-base xl:w-24 xl:h-10 xl:text-base bg-sky-600 text-white rounded mt-2 hover:bg-white hover:text-sky-600'>Live Demo</button>
-                                    <button className='hidden lg:inline-block xl:inline-block lg:w-24 lg:h-10 lg:text-base xl:w-24 xl:h-10 xl:text-base bg-sky-600 text-white rounded mt-2 hover:bg-white hover:text-sky-600 mx-2 sm:mx-3 md:mx-4 lg:mx-5 xl:mx-5'>Source</button>
-                                </div>
-                            </div>
-                        </div>
-
-
-                    </div> */}
+                   
 
                     <div className='text-center mt-12 lg:mt-16 xl:mt-24'>
                         <h1 className='text-xl text-white sm:text-2xl md:text-3xl lg:text-4xl xl:text-4xl font-bold'>
