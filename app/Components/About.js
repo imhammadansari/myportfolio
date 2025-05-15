@@ -46,7 +46,9 @@ const About = () => {
 </h1>
 
           <p className='text-xs text-white sm:text-base md:text-lg lg:text-lg xl:text-lg sm:mt-2 lg:mt-3 xl:mt-3' data-aos="fade-down">
-            I am a MERN stack developer specializing in front-end and back-end development. I create responsive, user-friendly websites with intuitive and visually appealing interfaces. Passionate about continuous learning, I stay updated on the latest tools and techniques to enhance the web experience.
+            I am a MERN stack developer specializing in front-end and back-end development. I 
+specialize in creating responsive designs that look great on any device, focusing on easy-to-use and 
+attractive user interfaces. I am excited to find new opportunities to contribute and grow as a developer. 
           </p>
           <a href="./Resume - Hammad Ansari.pdf" download>
   <button data-aos="fade-up" 
