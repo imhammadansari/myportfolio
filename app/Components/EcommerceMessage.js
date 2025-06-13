@@ -45,6 +45,16 @@ const EcommerceMessage = ({ hideEcommerceMessage }) => {
 
 
 
+                  <Link href="https://mern-ecommerce-peach-gamma.vercel.app/home">
+                    <button
+                      className='w-[5.5rem] h-9 text-xs sm:w-[7rem] sm:text-sm md:md:w-[7rem] md:text-sm cursor-pointer hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
+    text-white bg-gradient-to-r from-[#d062a0] to-[#5c0bed] rounded mt-2'
+
+                    >
+                      Live Demo
+                    </button>
+                  </Link>
+
                   <Link href="/ecommerce">
                     <button
                       className='w-[5.5rem] h-9 text-xs sm:w-[7rem] sm:text-sm md:md:w-[7rem] md:text-sm cursor-pointer hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 

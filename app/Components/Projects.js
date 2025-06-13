@@ -16,6 +16,7 @@ import EmployeeManagementMessage from './EmployeeManagementMessage';
 import Link from 'next/link';
 import CrowdFundingMessage from './CrowdFundingMessage';
 import AutomotiveMessage from './AutomotiveMessage';
+import JobPlatformMessage from './JobPlatformMessage';
 
 // ..
 
@@ -29,6 +30,7 @@ const Projects = () => {
     const [automovieMessage, setAutomovieMessage] = useState(false);
     const [contractIQMessage, setContractIQMessage] = useState(false);
     const [employeeManagementMessage, setemployeeManagementMessage] = useState(false);
+    const [jobPlatformMessage, setJobPlatformMessage] = useState(false);
     const [calculatorMessage, setcalculatorMessage] = useState(false);
 
 
@@ -50,6 +52,8 @@ const Projects = () => {
     const hideCrowdFundingMessage = () => setcrowdFundingMessage(false);
     const showAutomotiveMessage = () => setAutomovieMessage(!automovieMessage);
     const hideAutomotiveMessage = () => setAutomovieMessage(false);
+    const showJobPlatformMessage = () => setJobPlatformMessage(!jobPlatformMessage);
+    const hideJobPlatformMessage = () => setJobPlatformMessage(false);
 
     useEffect(() => {
         AOS.init({
@@ -106,6 +110,15 @@ const Projects = () => {
                                 </div>
                                 <div className='flex justify-center gap-4 md:justify-start'>
 
+                                    <Link href="https://crowd-funding-rose.vercel.app/home">
+                                        <button
+                                         className='hidden lg:inline-block xl:inline-block lg:w-32 lg:h-10 lg:text-base xl:w-32 xl:h-10 xl:text-base hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
+        text-white bg-gradient-to-r from-[#d062a0] to-[#5c0bed] rounded mt-2'
+
+                                        >
+                                            Live Demo
+                                        </button>
+                                    </Link>
 
                                     <Link href="/fundingPlatform">
                                         <button
@@ -116,6 +129,7 @@ const Projects = () => {
                                             Watch Online
                                         </button>
                                     </Link>
+                                    
 
                                 </div>
                             </div>
@@ -156,6 +170,15 @@ The platform includes an admin dashboard where the administrator has full contro
                                 </div>
                                 <div className='flex justify-center gap-4 md:justify-start'>
 
+                                    <Link href="https://automotive-market-place.vercel.app/home">
+                                        <button
+                                         className='hidden lg:inline-block xl:inline-block lg:w-32 lg:h-10 lg:text-base xl:w-32 xl:h-10 xl:text-base hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
+        text-white bg-gradient-to-r from-[#d062a0] to-[#5c0bed] rounded mt-2'
+
+                                        >
+                                            Live Demo
+                                        </button>
+                                    </Link>
 
                                     <Link href="/autoMotive">
                                         <button
@@ -214,31 +237,28 @@ The platform includes an admin dashboard where the administrator has full contro
                     </div>
                 </div>
 
-
                 <div className='w-auto mx-2 sm:mx-5 md:mx-10 lg:mx-20 xl:mx-20 mt-10 lg:mt-10 xl:mt-10'>
                     <div className='relative'>
-                        {employeeManagementMessage && (
+                        {jobPlatformMessage && (
                             <div className="fixed inset-0 w-full h-screen bg-black opacity-90 z-40"> </div>
                         )}
-                        {employeeManagementMessage && (
+                        {jobPlatformMessage && (
                             <div className="fixed inset-0 w-full h-screen flex justify-center items-center z-50">
-                                <EmployeeManagementMessage hideemployeeManagementMessage={hideemployeeManagementMessage} />
+                                <JobPlatformMessage hideJobPlatformMessage={hideJobPlatformMessage} />
                             </div>
                         )}
                         <div className='flex flex-col md:grid md:grid-cols-2 items-center'>
-                            <img className='w-80 sm:w-[35rem] md:w-96 xl:my-8 lg:my-8 rounded-xl transition-transform duration-300 hover:scale-110' data-aos="flip-left" src='./employeeManagement.png' />
+                            <img className='w-80 sm:w-[35rem] md:w-96 xl:my-8 lg:my-8 rounded-xl transition-transform duration-300 hover:scale-110' data-aos="flip-left" src='./job-platform.png' />
                             <div className='px-4 sm:px-3 md:px-5 lg:px-0 xl:px-0 flex flex-col justify-center' data-aos="flip-right">
-                                <h1 className='font-bold text-white text-sm sm:text-base md:text-lg lg:text-xl xl:text-xl pt-2 md:pt-0'>Employee Management Website</h1>
-                                <p className='hidden md:text-sm text-white lg:text-sm xl:text-sm lg:block pt-2'>I developed an Employee
-                                    Management System using the MERN stack, which allows secure login for both employees and admins, each
-                                    with their personalized dashboards. Employees can apply for leave by specifying the leave type, days,
-                                    and department, while also viewing their leave request history with statuses such as Pending,
-                                    Approved, and Rejected. They can access and manage their personal profiles, including job details
-                                    and contact information. Admins have the ability to register, update, or delete employee records,
-                                    as well as manage departments. Additionally, admins can view and manage all employee leave
-                                    requests, and they hold the authority to approve or reject leave requests.</p>
+                                <h1 className='font-bold text-white text-sm sm:text-base md:text-lg lg:text-xl xl:text-xl pt-2 md:pt-0'>Job Platform Website</h1>
+                                <p className='hidden md:text-sm text-white lg:text-sm xl:text-sm lg:block pt-2'>Job Platform is a web application that connects
+                                     employers and job seekers. Employers can create, update, and manage job postings, while job seekers
+                                      can search and apply for jobs. The platform supports advanced filtering by job type, salary range,
+                                       and keyword-based search by job title. An admin dashboard allows full control over jobs and 
+                                       employer accounts, along with an overview of total job listings. CRUD operations are implemented
+                                        throughout for efficient data management.</p>
                                 <div className='flex justify-center md:justify-start'>
-                                    <button onClick={showemployeeManagementMessage}
+                                    <button onClick={showJobPlatformMessage}
                                         className='w-[5rem] h-8 text-xs sm:w-[5rem] sm:text-sm md:w-[6rem] md:text-sm lg:hidden xl:hidden 
         hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
         bg-gradient-to-r from-[#d062a0] to-[#5c0bed] text-white rounded mt-2'
@@ -248,10 +268,17 @@ The platform includes an admin dashboard where the administrator has full contro
                                 </div>
                                 <div className='flex justify-center gap-4 md:justify-start'>
 
+                                    <Link href="https://job-platform-phi.vercel.app/home">
+                                        <button
+                                            className='hidden lg:inline-block xl:inline-block lg:w-28 lg:h-10 lg:text-base xl:w-32 xl:h-10 xl:text-base hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
+        text-white bg-gradient-to-r from-[#d062a0] to-[#5c0bed] rounded mt-2'
 
+                                        >
+                                            Live Demo
+                                        </button>
+                                    </Link>
 
-
-                                    <Link href="/employee">
+                                    <Link href="/jobPlatform">
                                         <button
                                             className='hidden lg:inline-block xl:inline-block lg:w-28 lg:h-10 lg:text-base xl:w-32 xl:h-10 xl:text-base hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
         text-white bg-gradient-to-r from-[#d062a0] to-[#5c0bed] rounded mt-2'
@@ -298,10 +325,66 @@ The platform includes an admin dashboard where the administrator has full contro
                                 </div>
                                 <div className='flex justify-center gap-4 md:justify-start'>
 
+                                    <Link href="https://mern-ecommerce-peach-gamma.vercel.app/home">
+                                        <button
+                                         className='hidden lg:inline-block xl:inline-block lg:w-32 lg:h-10 lg:text-base xl:w-32 xl:h-10 xl:text-base hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
+        text-white bg-gradient-to-r from-[#d062a0] to-[#5c0bed] rounded mt-2'
 
-
-
+                                        >
+                                            Live Demo
+                                        </button>
+                                    </Link>
+                                    
                                     <Link href="/ecommerce">
+                                        <button
+                                            className='hidden lg:inline-block xl:inline-block lg:w-28 lg:h-10 lg:text-base xl:w-32 xl:h-10 xl:text-base hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
+        text-white bg-gradient-to-r from-[#d062a0] to-[#5c0bed] rounded mt-2'
+
+                                        >
+                                            Watch Online
+                                        </button>
+                                    </Link>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className='w-auto mx-2 sm:mx-5 md:mx-10 lg:mx-20 xl:mx-20 mt-10 lg:mt-10 xl:mt-10'>
+                    <div className='relative'>
+                        {employeeManagementMessage && (
+                            <div className="fixed inset-0 w-full h-screen bg-black opacity-90 z-40"> </div>
+                        )}
+                        {employeeManagementMessage && (
+                            <div className="fixed inset-0 w-full h-screen flex justify-center items-center z-50">
+                                <EmployeeManagementMessage hideemployeeManagementMessage={hideemployeeManagementMessage} />
+                            </div>
+                        )}
+                        <div className='flex flex-col md:grid md:grid-cols-2 items-center'>
+                            <img className='w-80 sm:w-[35rem] md:w-96 xl:my-8 lg:my-8 rounded-xl transition-transform duration-300 hover:scale-110' data-aos="flip-left" src='./employeeManagement.png' />
+                            <div className='px-4 sm:px-3 md:px-5 lg:px-0 xl:px-0 flex flex-col justify-center' data-aos="flip-right">
+                                <h1 className='font-bold text-white text-sm sm:text-base md:text-lg lg:text-xl xl:text-xl pt-2 md:pt-0'>Employee Management Website</h1>
+                                <p className='hidden md:text-sm text-white lg:text-sm xl:text-sm lg:block pt-2'>I developed an Employee
+                                    Management System using the MERN stack, which allows secure login for both employees and admins, each
+                                    with their personalized dashboards. Employees can apply for leave by specifying the leave type, days,
+                                    and department, while also viewing their leave request history with statuses such as Pending,
+                                    Approved, and Rejected. They can access and manage their personal profiles, including job details
+                                    and contact information. Admins have the ability to register, update, or delete employee records,
+                                    as well as manage departments. Additionally, admins can view and manage all employee leave
+                                    requests, and they hold the authority to approve or reject leave requests.</p>
+                                <div className='flex justify-center md:justify-start'>
+                                    <button onClick={showemployeeManagementMessage}
+                                        className='w-[5rem] h-8 text-xs sm:w-[5rem] sm:text-sm md:w-[6rem] md:text-sm lg:hidden xl:hidden 
+        hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
+        bg-gradient-to-r from-[#d062a0] to-[#5c0bed] text-white rounded mt-2'
+                                    >
+                                        Read More
+                                    </button>
+                                </div>
+                                <div className='flex justify-center gap-4 md:justify-start'>
+
+                                    <Link href="/employee">
                                         <button
                                             className='hidden lg:inline-block xl:inline-block lg:w-28 lg:h-10 lg:text-base xl:w-32 xl:h-10 xl:text-base hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
         text-white bg-gradient-to-r from-[#d062a0] to-[#5c0bed] rounded mt-2'
