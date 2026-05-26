@@ -115,7 +115,9 @@ const WebDevelopment = () => {
                         and making my customers happy.
                     </p>
                     <button 
-                        onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
+                        onClick={() =>
+                            
+                            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
                         className='px-8 py-3 bg-gradient-to-r from-[#d062a0] to-[#5c0bed] text-white rounded-full font-medium hover:scale-105 transition-all duration-300'
                     >
                         GET STARTED
