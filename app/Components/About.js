@@ -6,18 +6,15 @@ import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 // ..
-import { useLottie } from "lottie-react";
+import dynamic from "next/dynamic";
+
+const Lottie = dynamic(() => import("lottie-react"), {
+  ssr: false,
+});
 import AboutAnimation from "../assets/aboutAnimate.json";
 
 
 const About = () => {
-
-  const options = {
-    animationData: AboutAnimation,
-    loop: true,
-  };
-
-  const { View } = useLottie(options);
 
   useEffect(() => {
     AOS.init({
@@ -72,7 +69,12 @@ const About = () => {
 
         </div>
         <div data-aos="zoom-in" className='w-full lg:w-[25rem] xl:w-[30rem] flex items-center justify-center mt-8 sm:mt-0 lg:mt-0'>
-          <div className="w-[18rem] lg:w-[28rem]">{View}</div>
+          <div className="w-[18rem] lg:w-[28rem]">
+            <Lottie
+              animationData={AboutAnimation}
+              loop={true}
+            />
+          </div>
         </div>
       </div>
     </>
