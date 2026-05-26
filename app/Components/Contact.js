@@ -1,120 +1,92 @@
 "use client";
-import React, { useEffect } from 'react';
-import 'animate.css';
+import React, { useEffect, useState } from 'react';
 import Swal from 'sweetalert2';
 import AOS from 'aos';
-import 'aos/dist/aos.css'; // You can also use <link> for styles
-// ..
+import 'aos/dist/aos.css';
 
 const Contact = () => {
+    const [isSubmitting, setIsSubmitting] = useState(false);
+
     const onSubmit = async (event) => {
         event.preventDefault();
+        setIsSubmitting(true);
+        
         const formData = new FormData(event.target);
-    
         formData.append("access_key", "2d5bd823-cef7-4d68-aaba-8d8f659f86e1");
-    
-        const object = Object.fromEntries(formData);
-        const json = JSON.stringify(object);
-    
+        const json = JSON.stringify(Object.fromEntries(formData));
+
         try {
             const res = await fetch("https://api.web3forms.com/submit", {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    Accept: "application/json"
-                },
+                headers: { "Content-Type": "application/json", Accept: "application/json" },
                 body: json
             });
             const data = await res.json();
             if (data.success) {
-                Swal.fire({
-                    title: "Success!",
-                    text: "Message Sent Successfully!",
-                    icon: "success"
-                });
+                Swal.fire({ title: "Success!", text: "Message Sent Successfully!", icon: "success" });
+                event.target.reset();
             } else {
-                Swal.fire({
-                    icon: "error",
-                    title: "Oops...",
-                    text: "Something went wrong!",
-                    footer: '<a href="#">Why do I have this issue?</a>'
-                });
+                Swal.fire({ icon: "error", title: "Oops...", text: "Something went wrong!" });
             }
         } catch (error) {
-            console.error("Error submitting form:", error);
+            console.error("Error:", error);
+            Swal.fire({ icon: "error", title: "Error", text: "Failed to send message!" });
+        } finally {
+            setIsSubmitting(false);
         }
     };
 
-  useEffect(() => {
-    AOS.init({
+    useEffect(() => {
+        AOS.init({ offset: 20, duration: 1000 });
+    }, []);
 
-    });
-    // const WOW = require('wowjs').WOW;
-    // const wow = new WOW({
-    //     offset: 100,
-    //     mobile: true,
-    //     live: true
-    // });
-    // wow.init();
-}, []);
- 
     return (
-        <>
-        
-        <div id='contact' className='w-full h-[37rem] md:h-[30rem] bg-black bg-opacity-95'>
-            <div className='text-center mt-2 lg:mt-4 xl:mt-4 pt-4 lg:pt-8 xl:pt-8'>
-                <h1 className='text-xl text-white sm:text-2xl md:text-3xl lg:text-5xl xl:text-5xl font-bold'>
-                    Get in <span className='bg-gradient-to-r from-[#d062a0] to-[#5c0bed] bg-clip-text text-transparent'>Touch</span>
-                </h1>
-                <h1 className='bg-gradient-to-r from-[#d062a0] to-[#5c0bed] bg-clip-text text-transparent mt-[-17px] sm:mt-[-25px] lg:mt-[-30px] xl:mt-[-31px] font-bold sm:text-xl md:text-2xl lg:text-4xl xl:text-4xl rounded'>
-                    ____
-                </h1>
-            </div>
+        <section id="contact" className='py-20 bg-black'>
+            <div className='container mx-auto px-4'>
+                <div className='text-center mb-12' data-aos="fade-up">
+                    <h2 className='text-3xl md:text-4xl font-bold text-white mb-2'>
+                        Let's <span className='bg-gradient-to-r from-[#d062a0] to-[#5c0bed] bg-clip-text text-transparent'>Work Together</span>
+                    </h2>
+                    <div className='w-20 h-1 bg-gradient-to-r from-[#d062a0] to-[#5c0bed] mx-auto rounded-full'></div>
+                    <p className='text-gray-400 mt-4'>Briefs and queries excite me, let's make something enticing</p>
+                </div>
 
-            <div className='bg-black bg-opacity-85 rounded-2xl w-auto mx-10 mt-5 pb-4 lg:pb-6'>
-                <form className='' data-aos="zoom-in" onSubmit={onSubmit}>
-                    <div className='p-4 flex flex-col gap-4 md:flex-row lg:flex-row lg:px-14 lg:py-8 lg:gap-20'>
-                        <div className='flex flex-col gap-4'>
-                            <input 
-                                type='text' 
-                                placeholder='Name' required name='name'
-                                className='p-2 w-full md:w-[20rem] lg:w-[31rem] bg-white text-white bg-opacity-15'
-                            />
-                            <input 
-                                type='text' 
-                                placeholder='Email' required name='email'
-                                className='p-2 w-full lg:w-[31rem] bg-white text-white bg-opacity-15'
-                            />
-                            <input 
-                                type='number' 
-                                placeholder='Number' required name='number'
-                                className='p-2 w-full lg:w-[31rem] bg-white text-white bg-opacity-15'
-                            />
-                            <input 
-                                type='text' 
-                                placeholder='Subject' required name='subject'
-                                className='p-2 w-full lg:w-[31rem] bg-white text-white bg-opacity-15'
-                            />
+                <div className='max-w-4xl mx-auto'>
+                    <div className='grid md:grid-cols-2 gap-8 mb-8'>
+                        <div className='space-y-4' data-aos="fade-right">
+                            <div className='flex items-center gap-3'>
+                                <div className='w-10 h-10 rounded-full bg-gradient-to-r from-[#d062a0] to-[#5c0bed] flex items-center justify-center'>
+                                    📞
+                                </div>
+                                <div>
+                                    <p className='text-gray-400 text-sm'>Call Me</p>
+                                    <p className='text-white'>+92-3282020955</p>
+                                </div>
+                            </div>
+                            <div className='flex items-center gap-3'>
+                                <div className='w-10 h-10 rounded-full bg-gradient-to-r from-[#d062a0] to-[#5c0bed] flex items-center justify-center'>
+                                    ✉️
+                                </div>
+                                <div>
+                                    <p className='text-gray-400 text-sm'>Email Me</p>
+                                    <p className='text-white'>ansarihamad084@gmail.com</p>
+                                </div>
+                            </div>
                         </div>
 
-                        <textarea 
-                            placeholder='Message' required name='message'
-                            className='bg-white text-white bg-opacity-15 p-4' 
-                            rows={6} 
-                            cols={60}
-                        ></textarea>
+                        <form onSubmit={onSubmit} className='space-y-4' data-aos="fade-left">
+                            <input type="text" name="name" placeholder="Your Name" required className='w-full px-4 py-3 bg-gray-900 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#d062a0] transition-colors' />
+                            <input type="email" name="email" placeholder="Your Email" required className='w-full px-4 py-3 bg-gray-900 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#d062a0] transition-colors' />
+                            <textarea name="message" placeholder="Your Message" rows="4" required className='w-full px-4 py-3 bg-gray-900 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#d062a0] transition-colors'></textarea>
+                            <button type="submit" disabled={isSubmitting} className='w-full py-3 bg-gradient-to-r from-[#d062a0] to-[#5c0bed] text-white rounded-lg font-medium hover:scale-105 transition-all duration-300 disabled:opacity-50'>
+                                {isSubmitting ? 'Sending...' : 'Send Message'}
+                            </button>
+                        </form>
                     </div>
-
-                    <div className='flex justify-center'>
-                        <button className='w-36 h-12 bg-white bg-opacity-15 text-white hover:bg-black hover:bg-opacity-25 rounded'>
-                            Send Message
-                        </button>
-                    </div>
-                </form>
+                </div>
             </div>
-        </div>
-        </>
+        </section>
     );
-}
+};
 
 export default Contact;

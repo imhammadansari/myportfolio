@@ -4,7 +4,7 @@ const Social = () => {
   return (
     <>
     <div className='flex gap-1 sm:gap-4 mr-4 sm:mr-10 md:mr-9 lg:mr-10'>
-          <a href='https://www.linkedin.com/in/hammad-ansari-mern-stack-developer' target='_blank' rel='noopener noreferrer'>
+          <a href='https://www.linkedin.com/in/hammadansarii' target='_blank' rel='noopener noreferrer'>
             <img className='w-5 lg:w-6 xl:w-6' src='./linkedin.png' alt='LinkedIn' />
           </a>
           <a href='mailto:ansarihamad084@gmail.com' target='_blank' rel='noopener noreferrer'>

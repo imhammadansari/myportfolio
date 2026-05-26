@@ -1,571 +1,282 @@
-
 "use client";
-import React, { useEffect, useRef, useState } from 'react';
-import 'animate.css';
-import RestaurentMessage from './RestaurentMessage';
-import GymMessage from './GymMessage';
-import QuizMessage from './QuizMessage';
-import AirlineMessage from './AirlineMessage';
-import EcommerceMessage from './EcommerceMessage';
+import React, { useEffect, useState } from 'react';
 import AOS from 'aos';
-import 'aos/dist/aos.css'; // You can also use <link> for styles
-import CalculatorMessage from './CalculatorMessage';
-import ToDoListMessage from './ToDoListMessage';
-import ContractIQMessage from './ContractIQMessage';
-import EmployeeManagementMessage from './EmployeeManagementMessage';
+import 'aos/dist/aos.css';
 import Link from 'next/link';
-import CrowdFundingMessage from './CrowdFundingMessage';
-import AutomotiveMessage from './AutomotiveMessage';
-import JobPlatformMessage from './JobPlatformMessage';
-
-// ..
 
 const Projects = () => {
-    const [restaurentMessage, setRestaurentMessage] = useState(false);
-    const [gymMessage, setGymMessage] = useState(false);
-    const [quizMessage, setQuizMessage] = useState(false);
-    const [airlineMessage, setAirlineMessage] = useState(false);
-    const [ecommerceMessage, setEcommerceMessage] = useState(false);
-    const [crowdFundingMessage, setcrowdFundingMessage] = useState(false);
-    const [automovieMessage, setAutomovieMessage] = useState(false);
-    const [contractIQMessage, setContractIQMessage] = useState(false);
-    const [employeeManagementMessage, setemployeeManagementMessage] = useState(false);
-    const [jobPlatformMessage, setJobPlatformMessage] = useState(false);
-    const [calculatorMessage, setcalculatorMessage] = useState(false);
-
-
-    const showRestaurentMessage = () => setRestaurentMessage(!restaurentMessage);
-    const hideMessage = () => setRestaurentMessage(false);
-    const showQuizMessage = () => setQuizMessage(!quizMessage);
-    const hideQuizMessage = () => setQuizMessage(false);
-    const showAirMessage = () => setAirlineMessage(!airlineMessage);
-    const hideAirMessage = () => setAirlineMessage(false);
-    const showContractIQMessage = () => setContractIQMessage(!contractIQMessage);
-    const hideContractIQMessage = () => setContractIQMessage(false);
-    const showemployeeManagementMessage = () => setemployeeManagementMessage(!employeeManagementMessage);
-    const hideemployeeManagementMessage = () => setemployeeManagementMessage(false);
-    const showEcommerceMessage = () => setEcommerceMessage(!ecommerceMessage);
-    const hideEcommerceMessage = () => setEcommerceMessage(false);
-    const showCalculatorMessage = () => setcalculatorMessage(!calculatorMessage);
-    const hideCalculatorMessage = () => setcalculatorMessage(false);
-    const showCrowdFundingMessage = () => setcrowdFundingMessage(!calculatorMessage);
-    const hideCrowdFundingMessage = () => setcrowdFundingMessage(false);
-    const showAutomotiveMessage = () => setAutomovieMessage(!automovieMessage);
-    const hideAutomotiveMessage = () => setAutomovieMessage(false);
-    const showJobPlatformMessage = () => setJobPlatformMessage(!jobPlatformMessage);
-    const hideJobPlatformMessage = () => setJobPlatformMessage(false);
+    const [isClient, setIsClient] = useState(false);
+    const [imageErrors, setImageErrors] = useState({});
 
     useEffect(() => {
-        AOS.init({
-            offset: 20,
-            duration: 1000,
-            mirror: true,
-            once: false, // Allow animations to trigger multiple times
-        });
+        setIsClient(true);
+        if (typeof window !== 'undefined') {
+            AOS.init({ offset: 20, duration: 1000 });
+        }
     }, []);
 
-    return (
-        <>
-            <div className='w-full bg-black bg-opacity-95'>
+    const handleImageError = (projectId) => {
+        setImageErrors(prev => ({ ...prev, [projectId]: true }));
+    };
 
+    const projects = [
+        {
+            id: 1,
+            category: 'ecommerce',
+            title: 'Shopify Plus Designers',
+            tech: 'Shopify, E-Commerce',
+            image: './shopify-plus-designer.webp',
+            link: 'https://shopifyplusdesigners.com/',
+            description: 'A professional design and development studio specializing in custom Shopify Plus solutions, marketing integrations, and scalable e-commerce stores.'
+        },
+        {
+            id: 2,
+            category: 'marketing',
+            title: 'Grow Online Presence',
+            tech: 'Digital Marketing, IT Services',
+            image: './gap.webp',
+            link: 'https://growonlinepresence.com/',
+            description: 'Professional IT services and digital solutions designed to help businesses operate smarter, scale faster, and dominate their competition online.'
+        },
+        {
+            id: 3,
+            category: 'marketing',
+            title: 'Dynamic Woodworking',
+            tech: 'Woodworking, Web Design',
+            image: './dynamic-woodworking.webp',
+            link: 'https://dynamicwoodworking.com/',
+            description: 'For over 30 years, transforming homes across the Twin Cities Metro with exceptional woodworking, custom cabinets, countertops, and fireplace surrounds.'
+        },
+        {
+            id: 4,
+            category: 'ecommerce',
+            title: 'MuSolf\'s Flooring',
+            tech: 'E-Commerce, Sustainable Products',
+            image: './musolfs.webp',
+            link: 'https://musolfs.com/',
+            description: 'Offering sustainable flooring collections in a wide range of materials and wood finishes.'
+        },
+        {
+            id: 5,
+            category: 'web',
+            title: 'MCSO Doctors',
+            tech: 'Healthcare, Web Development',
+            image: './mcso.webp',
+            link: 'https://www.mcsodoctors.com/',
+            description: 'Premier urological care provider in Chicago offering superior treatment and compassionate care.'
+        },
+        {
+            id: 6,
+            category: 'frontend',
+            title: 'Max Restaurant',
+            tech: 'HTML, CSS, JavaScript',
+            image: './max-restaurent.webp', // Save the thumbnail as this name
+            link: 'https://demoxml.com/html/restaurant/index.html',
+            description: 'A beautifully designed restaurant website with menu displays, reservation system, and event showcase for an authentic dining experience.'
+        },
+        {
+            id: 7,
+            category: 'frontend',
+            title: 'Elegencia',
+            tech: 'React.js, Modern UI',
+            image: './elegencia.webp', // Save the thumbnail as this name
+            link: 'https://elegencia-react-ejev.vercel.app/',
+            description: 'An elegant Royale Restaurant React JS template featuring a sophisticated design, menu exploration, and seamless user experience for fine dining establishments.'
+        },
+        {
+            id: 8,
+            category: 'ecommerce',
+            title: 'Dinevera',
+            tech: 'Webflow, E-Commerce',
+            image: './dinevera.webp', // Save the thumbnail as this name
+            link: 'https://dinevera.webflow.io/',
+            description: 'A Webflow ecommerce website template for restaurants and food businesses with online ordering, delivery zones, and multi-location support.'
+        },
+        {
+            id: 9,
+            category: 'ecommerce',
+            title: 'Toad&Co',
+            tech: 'Sustainable Fashion, E-Commerce',
+            image: './toadandoco.webp', // Save the thumbnail as this name
+            link: 'https://www.toadandco.com/',
+            description: 'Sustainable, organic, and eco-friendly clothing brand since 1996, offering built-to-last apparel that is kind to the planet and rooted in community.'
+        },
+        {
+            id: 10,
+            category: 'web',
+            title: 'Laser and Me',
+            tech: 'Medical Spa, Healthcare',
+            image: './laser-and-me.webp', // Save the thumbnail as this name
+            link: 'https://laserandme.com/',
+            description: 'A full-service medical spa in Midtown Manhattan offering painless laser hair removal, skin rejuvenation, acne scar treatments, and Botox for every skin type.'
+        },
+        {
+            id: 11,
+            category: 'web',
+            title: 'Chaletô',
+            tech: 'Property Management, Real Estate',
+            image: './chaleto.webp', // Save the thumbnail as this name
+            link: 'https://www.chaleto.ca/',
+            description: 'Quebec-based chalet rental management service helping property owners maximize profitability with professional photography, dynamic pricing, and full-service guest management.'
+        },
+        {
+            id: 12,
+            category: 'web',
+            title: 'S&P Real Estate',
+            tech: 'Real Estate, Luxury Properties',
+            image: './s-and-p.webp',
+            link: 'https://sprec.com/',
+            description: 'International real estate boutique specializing in branded residences, masterplanned communities, destination resorts, and urban super prime real estate developments.'
+        },
+        {
+            id: 13,
+            category: 'web',
+            title: 'Icon Villas',
+            tech: 'Luxury Rentals, Travel',
+            image: './iconVillas.webp',
+            link: 'https://iconvillas.com/',
+            description: 'Curated selection of private, hand-picked luxury villas throughout South Africa with breathtaking views, quality finishes, and personalized hospitality experiences.'
+        },
+        {
+            id: 14,
+            category: 'web',
+            title: 'DI Jones',
+            tech: 'Real Estate, Property',
+            image: './dijones.webp',
+            link: 'https://www.dijones.com.au/',
+            description: 'Australian real estate agency offering property sales, management, and expert market insights for buyers and sellers across New South Wales.'
+        },
+        {
+            id: 15,
+            category: 'web',
+            title: 'Ripcony',
+            tech: 'Real Estate, Commercial',
+            image: './ripcony.webp',
+            link: 'https://www.ripcony.com/',
+            description: 'Professional real estate services specializing in commercial and residential property solutions with market expertise.'
+        },
+        {
+            id: 16,
+            category: 'ecommerce',
+            title: 'Rejuvenate Skincare Studio',
+            tech: 'Skincare, E-Commerce',
+            image: './rejuvenates.webp',
+            link: 'https://rejuvenateskincarestudio.com/',
+            description: 'Thoughtfully curated skincare studio offering facials, professional treatments, and clean beauty products to support barrier health and deliver visible results.'
+        },
+        {
+            id: 17,
+            category: 'web',
+            title: 'Maryam Hair & Beauty',
+            tech: 'Salon, Beauty',
+            image: './maryam-hair-beauty.webp',
+            link: 'https://maryamhairandbeauty.co.uk/',
+            description: "London's premier ladies-only salon offering professional hair styling, beauty treatments, and personalized services in a comfortable, private environment."
+        },
+        {
+            id: 18,
+            category: 'ecommerce',
+            title: 'Regis Salons',
+            tech: 'Hair Salon, E-Commerce',
+            image: './regis.webp',
+            link: 'https://regissalons.co.uk/',
+            description: 'Luxury hair salons offering professional haircuts, colouring services, styling products, and tools with an online shop for premium hair care brands.'
+        },
 
+        // --- NEW PET CARE PROJECT ---
+        {
+            id: 19,
+            category: 'web',
+            title: 'Buckaroo Buddies Pet Care',
+            tech: 'Pet Services, Local Business',
+            image: './buckaroo-buddies.webp',
+            link: 'https://www.buckaroobuddiespetcare.com/',
+            description: "San Antonio's trusted pet care service offering quality pet sitting, first aid certified team, and dependable care for your furry sidekicks."
+        },
+        { id: 20, category: 'web', title: 'CrowdFunding Platform', tech: 'MERN Stack', image: './crowdFunding.png', link: 'https://crowd-funding-rose.vercel.app/home' },
+        { id: 21, category: 'web', title: 'E-commerce Website', tech: 'MERN Stack', image: './ecommerceWebsite.png', link: 'https://mern-ecommerce-peach-gamma.vercel.app/home' },
+        { id: 22, category: 'frontend', title: 'Restaurant Website', tech: 'HTML/CSS/JS', image: './restaurent2.jpg', link: '#' },
+        { id: 23, category: 'web', title: 'Employee Management', tech: 'MERN Stack', image: './employeeManagement.png', link: '#' },
+
+    ];
+
+    if (!isClient) {
+        return (
+            <section className='w-full bg-black bg-opacity-95 py-12'>
                 <div className='text-center mt-2 lg:mt-4 xl:mt-4 pt-12 lg:pt-16 xl:pt-16'>
                     <h1 className='text-xl text-white sm:text-2xl md:text-3xl lg:text-4xl xl:text-4xl font-bold'>
-                        Real-Time <span className='bg-gradient-to-r from-[#d062a0] to-[#5c0bed] bg-clip-text text-transparent'>Projects</span>
-                    </h1>
-                    <h1 className='bg-gradient-to-r from-[#d062a0] to-[#5c0bed] bg-clip-text text-transparent mt-[-17px] sm:mt-[-25px] lg:mt-[-30px] xl:mt-[-31px] font-bold sm:text-xl md:text-2xl lg:text-4xl xl:text-4xl rounded'>
-                        ____
+                        My <span className='bg-gradient-to-r from-[#d062a0] to-[#5c0bed] bg-clip-text text-transparent'>Latest Work</span>
                     </h1>
                 </div>
+            </section>
+        );
+    }
 
-                <div className='w-auto mx-2 sm:mx-5 md:mx-10 lg:mx-20 xl:mx-20 mt-5 lg:mt-10 xl:mt-10'>
-                    <div className='relative'>
-                        {crowdFundingMessage && (
-                            <div className="fixed inset-0 w-full h-screen bg-black opacity-90 z-40"> </div>
-                        )}
-                        {crowdFundingMessage && (
-                            <div className="fixed inset-0 w-full h-screen flex justify-center items-center z-50">
-                                <CrowdFundingMessage hideCrowdFundingMessage={hideCrowdFundingMessage} />
+    return (
+        <section id="projects" className='w-full bg-black bg-opacity-95'>
+            <div className='text-center mt-2 lg:mt-4 xl:mt-4 pt-12 lg:pt-16 xl:pt-16'>
+                <h1 className='text-xl text-white sm:text-2xl md:text-3xl lg:text-4xl xl:text-4xl font-bold'>
+                    My <span className='bg-gradient-to-r from-[#d062a0] to-[#5c0bed] bg-clip-text text-transparent'>Latest Work</span>
+                </h1>
+                <h1 className='bg-gradient-to-r from-[#d062a0] to-[#5c0bed] bg-clip-text text-transparent mt-[-17px] sm:mt-[-25px] lg:mt-[-30px] xl:mt-[-31px] font-bold sm:text-xl md:text-2xl lg:text-4xl xl:text-4xl rounded'>
+                    ____
+                </h1>
+                <p className='text-gray-400 mt-4 max-w-2xl mx-auto px-4 text-sm sm:text-base'>
+                    When it comes to creating customized websites and digital solutions, I deliver excellence with creative methodology
+                </p>
+            </div>
+
+            {/* Projects Grid - Larger Thumbnails */}
+            <div className='w-auto mx-2 sm:mx-5 md:mx-10 lg:mx-20 xl:mx-20 mt-5 lg:mt-10 xl:mt-10'>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 lg:gap-10'>
+                    {projects.map((project, index) => (
+                        <div
+                            key={project.id}
+                            className='group bg-gradient-to-br from-gray-900 to-black rounded-xl border border-white/10 hover:border-[#d062a0]/50 transition-all duration-500 overflow-hidden hover:scale-[1.02]'
+                            data-aos="flip-left"
+                            data-aos-delay={index * 100}
+                        >
+                            {/* Larger aspect ratio container - 16:9 for bigger thumbnails */}
+                            <div className='relative w-full pt-[56.25%] overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900'>
+                                {!imageErrors[project.id] ? (
+                                    <img
+                                        src={project.image}
+                                        alt={project.title}
+                                        className='absolute top-0 left-0 w-full h-full object-contain transition-transform duration-500 group-hover:scale-110'
+                                        onError={() => handleImageError(project.id)}
+                                    />
+                                ) : (
+                                    <div className='absolute top-0 left-0 w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-800 to-gray-900'>
+                                        <div className='text-center'>
+                                            <div className='text-6xl mb-2'>🖼️</div>
+                                            <p className='text-gray-500 text-sm'>{project.title}</p>
+                                        </div>
+                                    </div>
+                                )}
+                                {/* Overlay gradient on hover */}
+                                <div className='absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500'></div>
                             </div>
-                        )}
-                        <div className='flex flex-col md:grid md:grid-cols-2 items-center'>
-                            <img className='w-80 sm:w-[35rem] md:w-96 xl:my-8 lg:my-8 rounded-xl transition-transform duration-300 hover:scale-110' data-aos="flip-left" src='./crowdFunding.png' />
-                            <div className='px-4 sm:px-3 md:px-5 lg:px-0 xl:px-0 flex flex-col justify-center' data-aos="flip-right">
-                                <h1 className='font-bold pt-2 md:pt-0 text-white text-sm sm:text-base md:text-lg lg:text-xl xl:text-xl'>CrowdFunding Website</h1>
-                                <p className='hidden md:text-sm text-white lg:text-sm pt-2 xl:text-sm lg:block'>CrowdFunding is a MERN
-                                    stack-based funding platform designed to support students in need of financial assistance for
-                                    their education. Students can create donation requests by sharing their academic details and funding
-                                    needs, while donors can browse these requests and contribute securely. The platform includes an
-                                    admin panel to manage student requests, donor activities, and payment processing, ensuring
-                                    transparency and efficiency. This Platform connects generous donors with deserving students, making
-                                    education accessible to all.</p>
-                                <div className='flex justify-center md:justify-start'>
-                                    <button onClick={showCrowdFundingMessage}
-                                        className='w-[5rem] h-8 text-xs sm:w-[5rem] sm:text-sm md:w-[6rem] md:text-sm lg:hidden xl:hidden 
-        hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
-        bg-gradient-to-r from-[#d062a0] to-[#5c0bed] text-white rounded mt-2'
-                                    >
-                                        Read More
+                            <div className='p-6'>
+                                <h3 className='text-2xl font-bold text-white mb-2 group-hover:text-[#d062a0] transition-colors duration-300'>{project.title}</h3>
+                                <p className='text-gray-400 text-base mb-4'>{project.tech}</p>
+                                {project.link !== '#' ? (
+                                    <Link href={project.link} target="_blank">
+                                        <button className='text-[#d062a0] hover:text-white transition-colors duration-300 flex items-center gap-2 group-hover:gap-4 text-base font-medium'>
+                                            View Project →
+                                        </button>
+                                    </Link>
+                                ) : (
+                                    <button className='text-gray-500 cursor-not-allowed flex items-center gap-2'>
+                                        Coming Soon →
                                     </button>
-                                </div>
-                                <div className='flex justify-center gap-4 md:justify-start'>
-
-                                    <Link href="https://crowd-funding-rose.vercel.app/home">
-                                        <button
-                                         className='hidden lg:inline-block xl:inline-block lg:w-32 lg:h-10 lg:text-base xl:w-32 xl:h-10 xl:text-base hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
-        text-white bg-gradient-to-r from-[#d062a0] to-[#5c0bed] rounded mt-2'
-
-                                        >
-                                            Live Demo
-                                        </button>
-                                    </Link>
-
-                                    <Link href="/fundingPlatform">
-                                        <button
-                                         className='hidden lg:inline-block xl:inline-block lg:w-32 lg:h-10 lg:text-base xl:w-32 xl:h-10 xl:text-base hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
-        text-white bg-gradient-to-r from-[#d062a0] to-[#5c0bed] rounded mt-2'
-
-                                        >
-                                            Watch Online
-                                        </button>
-                                    </Link>
-                                    
-
-                                </div>
+                                )}
                             </div>
                         </div>
-                    </div>
+                    ))}
                 </div>
-
-                <div className='w-auto mx-2 sm:mx-5 md:mx-10 lg:mx-20 xl:mx-20 mt-5 lg:mt-10 xl:mt-10'>
-                    <div className='relative'>
-                        {automovieMessage && (
-                            <div className="fixed inset-0 w-full h-screen bg-black opacity-90 z-40"> </div>
-                        )}
-                        {automovieMessage && (
-                            <div className="fixed inset-0 w-full h-screen flex justify-center items-center z-50">
-                                <AutomotiveMessage hideAutomotiveMessage={hideAutomotiveMessage} />
-                            </div>
-                        )}
-                        <div className='flex flex-col md:grid md:grid-cols-2 items-center'>
-                            <img className='w-80 sm:w-[35rem] md:w-96 xl:my-8 lg:my-8 rounded-xl transition-transform duration-300 hover:scale-110' data-aos="flip-left" src='./automotiveImage.png' />
-                            <div className='px-4 sm:px-3 md:px-5 lg:px-0 xl:px-0 flex flex-col justify-center' data-aos="flip-right">
-                                <h1 className='font-bold pt-2 md:pt-0 text-white text-sm sm:text-base md:text-lg lg:text-xl xl:text-xl'>Automotive Marketplace</h1>
-                                <p className='hidden md:text-sm text-white lg:text-sm pt-2 xl:text-sm lg:block'>The Automotive 
-                                    Marketplace is a full-stack web application developed using the MERN Stack (MongoDB, Express.js, 
-                                    React.js, and Node.js). This platform connects car owners and buyers in a seamless and user-friendly
-                                     environment. Car owners can easily create listings by submitting their vehicle details, including 
-                                     make, model, price, and images. Buyers can browse through the listed vehicles, filter based on
-                                      their preferences, and contact owners directly for inquiries.
-
-The platform includes an admin dashboard where the administrator has full control over vehicle listings, with the ability to create, read, update, and delete (CRUD) any entry. The application ensures smooth user interaction, real-time data updates, and secure backend operations, making it an efficient solution for online vehicle trading.</p>
-                                <div className='flex justify-center md:justify-start'>
-                                    <button onClick={showAutomotiveMessage}
-                                        className='w-[5rem] h-8 text-xs sm:w-[5rem] sm:text-sm md:w-[6rem] md:text-sm lg:hidden xl:hidden 
-        hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
-        bg-gradient-to-r from-[#d062a0] to-[#5c0bed] text-white rounded mt-2'
-                                    >
-                                        Read More
-                                    </button>
-                                </div>
-                                <div className='flex justify-center gap-4 md:justify-start'>
-
-                                    <Link href="https://automotive-market-place.vercel.app/home">
-                                        <button
-                                         className='hidden lg:inline-block xl:inline-block lg:w-32 lg:h-10 lg:text-base xl:w-32 xl:h-10 xl:text-base hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
-        text-white bg-gradient-to-r from-[#d062a0] to-[#5c0bed] rounded mt-2'
-
-                                        >
-                                            Live Demo
-                                        </button>
-                                    </Link>
-
-                                    <Link href="/autoMotive">
-                                        <button
-                                             className='hidden lg:inline-block xl:inline-block lg:w-28 lg:h-10 lg:text-base xl:w-32 xl:h-10 xl:text-base hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
-        text-white bg-gradient-to-r from-[#d062a0] to-[#5c0bed] rounded mt-2'
-
-                                        >
-                                            Watch Online
-                                        </button>
-                                    </Link>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div className='w-auto mx-2 sm:mx-5 md:mx-10 lg:mx-20 xl:mx-20 mt-10 lg:mt-10 xl:mt-10'>
-                    <div className='relative'>
-                        {contractIQMessage && (
-                            <div className="fixed inset-0 w-full h-screen bg-black opacity-90 z-40"> </div>
-                        )}
-                        {contractIQMessage && (
-                            <div className="fixed inset-0 w-full h-screen flex justify-center items-center z-50">
-                                <ContractIQMessage hideContractIQMessage={hideContractIQMessage} />
-                            </div>
-                        )}
-                        <div className='flex flex-col md:grid md:grid-cols-2 items-center'>
-                            <img className='w-80 sm:w-[35rem] md:w-96 xl:my-8 lg:my-8 rounded-xl transition-transform duration-300 hover:scale-110' data-aos="flip-left" src='./contractIQ.png' />
-                            <div className='px-4 sm:px-3 md:px-5 lg:px-0 xl:px-0 flex flex-col justify-center' data-aos="flip-right">
-                                <h1 className='font-bold text-white text-sm sm:text-base md:text-lg lg:text-xl xl:text-xl pt-2 md:pt-0'>ContractIQ Front-End Website</h1>
-                                <p className='hidden md:text-sm text-white lg:text-sm xl:text-sm lg:block pt-2'>I developed a frontend
-                                    project using React.js for my client, who requested a website named ContractIQ. The website
-                                    provides valuable information and guidance about Ethereum smart contracts, offering users insights
-                                    into their functionality and usage. The project showcases my skills in building user-friendly,
-                                    responsive web applications using modern frontend technologies.</p>
-                                <div className='flex justify-center md:justify-start'>
-                                    <button onClick={showContractIQMessage} className='w-[5rem] h-8 text-xs sm:w-[5rem] sm:text-sm md:w-[6rem] md:text-sm lg:hidden xl:hidden hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
-    text-white bg-gradient-to-r from-[#d062a0] to-[#5c0bed] rounded mt-2'>Read More</button>
-                                    <button
-                                        className='hidden lg:inline-block xl:inline-block lg:w-24 lg:h-10 lg:text-base xl:w-28 xl:h-10 xl:text-base hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
-    text-white bg-gradient-to-r from-[#d062a0] to-[#5c0bed] rounded mt-2'
-                                        onClick={() => {
-                                            window.location.href = 'https://contract-iq-drab.vercel.app/home';
-                                        }}
-                                    >
-                                        Live Demo
-                                    </button>
-
-
-
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div className='w-auto mx-2 sm:mx-5 md:mx-10 lg:mx-20 xl:mx-20 mt-10 lg:mt-10 xl:mt-10'>
-                    <div className='relative'>
-                        {jobPlatformMessage && (
-                            <div className="fixed inset-0 w-full h-screen bg-black opacity-90 z-40"> </div>
-                        )}
-                        {jobPlatformMessage && (
-                            <div className="fixed inset-0 w-full h-screen flex justify-center items-center z-50">
-                                <JobPlatformMessage hideJobPlatformMessage={hideJobPlatformMessage} />
-                            </div>
-                        )}
-                        <div className='flex flex-col md:grid md:grid-cols-2 items-center'>
-                            <img className='w-80 sm:w-[35rem] md:w-96 xl:my-8 lg:my-8 rounded-xl transition-transform duration-300 hover:scale-110' data-aos="flip-left" src='./job-platform.png' />
-                            <div className='px-4 sm:px-3 md:px-5 lg:px-0 xl:px-0 flex flex-col justify-center' data-aos="flip-right">
-                                <h1 className='font-bold text-white text-sm sm:text-base md:text-lg lg:text-xl xl:text-xl pt-2 md:pt-0'>Job Platform Website</h1>
-                                <p className='hidden md:text-sm text-white lg:text-sm xl:text-sm lg:block pt-2'>Job Platform is a web application that connects
-                                     employers and job seekers. Employers can create, update, and manage job postings, while job seekers
-                                      can search and apply for jobs. The platform supports advanced filtering by job type, salary range,
-                                       and keyword-based search by job title. An admin dashboard allows full control over jobs and 
-                                       employer accounts, along with an overview of total job listings. CRUD operations are implemented
-                                        throughout for efficient data management.</p>
-                                <div className='flex justify-center md:justify-start'>
-                                    <button onClick={showJobPlatformMessage}
-                                        className='w-[5rem] h-8 text-xs sm:w-[5rem] sm:text-sm md:w-[6rem] md:text-sm lg:hidden xl:hidden 
-        hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
-        bg-gradient-to-r from-[#d062a0] to-[#5c0bed] text-white rounded mt-2'
-                                    >
-                                        Read More
-                                    </button>
-                                </div>
-                                <div className='flex justify-center gap-4 md:justify-start'>
-
-                                    <Link href="https://job-platform-phi.vercel.app/home">
-                                        <button
-                                            className='hidden lg:inline-block xl:inline-block lg:w-28 lg:h-10 lg:text-base xl:w-32 xl:h-10 xl:text-base hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
-        text-white bg-gradient-to-r from-[#d062a0] to-[#5c0bed] rounded mt-2'
-
-                                        >
-                                            Live Demo
-                                        </button>
-                                    </Link>
-
-                                    <Link href="/jobPlatform">
-                                        <button
-                                            className='hidden lg:inline-block xl:inline-block lg:w-28 lg:h-10 lg:text-base xl:w-32 xl:h-10 xl:text-base hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
-        text-white bg-gradient-to-r from-[#d062a0] to-[#5c0bed] rounded mt-2'
-
-                                        >
-                                            Watch Online
-                                        </button>
-                                    </Link>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div className='w-auto mx-2 sm:mx-5 md:mx-10 lg:mx-20 xl:mx-20 mt-5 lg:mt-10 xl:mt-10'>
-                    <div className='relative'>
-                        {ecommerceMessage && (
-                            <div className="fixed inset-0 w-full h-screen bg-black opacity-90 z-40"> </div>
-                        )}
-                        {ecommerceMessage && (
-                            <div className="fixed inset-0 w-full h-screen flex justify-center items-center z-50">
-                                <EcommerceMessage hideEcommerceMessage={hideEcommerceMessage} />
-                            </div>
-                        )}
-                        <div className='flex flex-col md:grid md:grid-cols-2 items-center'>
-                            <img className='w-80 sm:w-[35rem] md:w-96 xl:my-8 lg:my-8 rounded-xl transition-transform duration-300 hover:scale-110' data-aos="flip-left" src='./ecommerceWebsite.png' />
-                            <div className='px-4 sm:px-3 md:px-5 lg:px-0 xl:px-0 flex flex-col justify-center' data-aos="flip-right">
-                                <h1 className='font-bold pt-2 md:pt-0 text-white text-sm sm:text-base md:text-lg lg:text-xl xl:text-xl'>E-commmerce Website</h1>
-                                <p className='hidden md:text-sm text-white lg:text-sm pt-2 xl:text-sm lg:block'>I developed a fully functional
-                                    E-commerce website leveraging the MERN Stack (MongoDB, Express.js, React.js, Node.js). It contains a best
-                                    user friendly interface and modern design. Users can create an account with secure login, explore all
-                                    product categories, browse products in each category, add items to their cart, and proceed to checkout.
-                                    Once the order is placed, they can see the details of the Pending orders. This project showcases a smooth
-                                    and secure shopping experience from start to finish.</p>
-                                <div className='flex justify-center md:justify-start'>
-                                    <button onClick={showEcommerceMessage}
-                                        className='w-[5rem] h-8 text-xs sm:w-[5rem] sm:text-sm md:w-[6rem] md:text-sm lg:hidden xl:hidden 
-        hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
-        bg-gradient-to-r from-[#d062a0] to-[#5c0bed] text-white rounded mt-2'
-                                    >
-                                        Read More
-                                    </button>
-                                </div>
-                                <div className='flex justify-center gap-4 md:justify-start'>
-
-                                    <Link href="https://mern-ecommerce-peach-gamma.vercel.app/home">
-                                        <button
-                                         className='hidden lg:inline-block xl:inline-block lg:w-32 lg:h-10 lg:text-base xl:w-32 xl:h-10 xl:text-base hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
-        text-white bg-gradient-to-r from-[#d062a0] to-[#5c0bed] rounded mt-2'
-
-                                        >
-                                            Live Demo
-                                        </button>
-                                    </Link>
-                                    
-                                    <Link href="/ecommerce">
-                                        <button
-                                            className='hidden lg:inline-block xl:inline-block lg:w-28 lg:h-10 lg:text-base xl:w-32 xl:h-10 xl:text-base hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
-        text-white bg-gradient-to-r from-[#d062a0] to-[#5c0bed] rounded mt-2'
-
-                                        >
-                                            Watch Online
-                                        </button>
-                                    </Link>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div className='w-auto mx-2 sm:mx-5 md:mx-10 lg:mx-20 xl:mx-20 mt-10 lg:mt-10 xl:mt-10'>
-                    <div className='relative'>
-                        {employeeManagementMessage && (
-                            <div className="fixed inset-0 w-full h-screen bg-black opacity-90 z-40"> </div>
-                        )}
-                        {employeeManagementMessage && (
-                            <div className="fixed inset-0 w-full h-screen flex justify-center items-center z-50">
-                                <EmployeeManagementMessage hideemployeeManagementMessage={hideemployeeManagementMessage} />
-                            </div>
-                        )}
-                        <div className='flex flex-col md:grid md:grid-cols-2 items-center'>
-                            <img className='w-80 sm:w-[35rem] md:w-96 xl:my-8 lg:my-8 rounded-xl transition-transform duration-300 hover:scale-110' data-aos="flip-left" src='./employeeManagement.png' />
-                            <div className='px-4 sm:px-3 md:px-5 lg:px-0 xl:px-0 flex flex-col justify-center' data-aos="flip-right">
-                                <h1 className='font-bold text-white text-sm sm:text-base md:text-lg lg:text-xl xl:text-xl pt-2 md:pt-0'>Employee Management Website</h1>
-                                <p className='hidden md:text-sm text-white lg:text-sm xl:text-sm lg:block pt-2'>I developed an Employee
-                                    Management System using the MERN stack, which allows secure login for both employees and admins, each
-                                    with their personalized dashboards. Employees can apply for leave by specifying the leave type, days,
-                                    and department, while also viewing their leave request history with statuses such as Pending,
-                                    Approved, and Rejected. They can access and manage their personal profiles, including job details
-                                    and contact information. Admins have the ability to register, update, or delete employee records,
-                                    as well as manage departments. Additionally, admins can view and manage all employee leave
-                                    requests, and they hold the authority to approve or reject leave requests.</p>
-                                <div className='flex justify-center md:justify-start'>
-                                    <button onClick={showemployeeManagementMessage}
-                                        className='w-[5rem] h-8 text-xs sm:w-[5rem] sm:text-sm md:w-[6rem] md:text-sm lg:hidden xl:hidden 
-        hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
-        bg-gradient-to-r from-[#d062a0] to-[#5c0bed] text-white rounded mt-2'
-                                    >
-                                        Read More
-                                    </button>
-                                </div>
-                                <div className='flex justify-center gap-4 md:justify-start'>
-
-                                    <Link href="/employee">
-                                        <button
-                                            className='hidden lg:inline-block xl:inline-block lg:w-28 lg:h-10 lg:text-base xl:w-32 xl:h-10 xl:text-base hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
-        text-white bg-gradient-to-r from-[#d062a0] to-[#5c0bed] rounded mt-2'
-
-                                        >
-                                            Watch Online
-                                        </button>
-                                    </Link>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div className='w-auto mx-2 sm:mx-5 md:mx-10 lg:mx-20 xl:mx-20 mt-5 lg:mt-10 xl:mt-10'>
-                   
-
-                    <div className='text-center mt-12 lg:mt-16 xl:mt-24'>
-                        <h1 className='text-xl text-white sm:text-2xl md:text-3xl lg:text-4xl xl:text-4xl font-bold'>
-                            Academic <span className='bg-gradient-to-r from-[#d062a0] to-[#5c0bed] bg-clip-text text-transparent'>Projects</span>
-                        </h1>
-                        <h1 className='bg-gradient-to-r from-[#d062a0] to-[#5c0bed] bg-clip-text text-transparent mt-[-17px] sm:mt-[-25px] lg:mt-[-30px] xl:mt-[-31px] font-bold sm:text-xl md:text-2xl lg:text-4xl xl:text-4xl rounded'>
-                            ____
-                        </h1>
-                    </div>
-
-
-                    <div className="relative">
-
-                        {/* Background overlay */}
-                        {restaurentMessage && (
-                            <div className="fixed inset-0 w-full h-screen bg-black opacity-90 z-40"></div>
-                        )}
-
-                        {/* Message Component */}
-                        {restaurentMessage && (
-                            <div className="fixed inset-0 w-full h-screen flex items-center justify-center z-50">
-                                <RestaurentMessage hideMessage={hideMessage} />
-                            </div>
-                        )}
-
-                        {/* Project Content */}
-                        <div className="flex flex-col md:grid md:grid-cols-2 items-center my-10">
-                            <img
-                                className="lg:my-3 xl:my-9 w-80 sm:w-[35rem] md:w-96 rounded-xl transition-transform duration-500 hover:scale-110 " data-aos="flip-left"
-                                src="./restaurent2.jpg"
-                            />
-                            <div className="px-4 sm:px-3 md:px-5 lg:px-0 xl:px-0 flex flex-col justify-center" data-aos="flip-right">
-                                <h1 className="font-bold text-white text-sm sm:text-base md:text-lg lg:text-xl xl:text-xl pt-2 md:pt-0">Restaurent Website</h1>
-                                <p className="hidden md:text-sm lg:text-sm text-white xl:text-sm pt-2 lg:block">
-                                    I developed a restaurant website using HTML, CSS, and JavaScript. The site features a modern design with a welcoming homepage, detailed menu, and an image gallery showcasing the restaurant's dishes. The contact page provides location, hours, and a form for inquiries. The website aims to enhance the restaurant's online presence and attract more customers.
-                                </p>
-                                <div className='flex justify-center md:justify-start'>
-                                    <button onClick={showRestaurentMessage} className='w-[5rem] h-8 text-xs sm:w-[5rem] sm:text-sm md:w-[6rem] md:text-sm lg:hidden xl:hidden hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
-     bg-gradient-to-r from-[#d062a0] to-[#5c0bed] text-white rounded mt-2'>Read More</button>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
-                    <div className='relative'>
-                        {quizMessage && (
-                            <div className='fixed inset-0 w-full h-screen bg-black bg-opacity-90 z-40'> </div>
-                        )}
-
-                        {quizMessage && (
-                            <div className='fixed inset-0 w-full h-screen flex justify-center items-center z-50'>
-                                <QuizMessage hideQuizMessage={hideQuizMessage} />
-                            </div>
-
-                        )}
-
-
-                        <div className='flex flex-col md:grid md:grid-cols-2 items-center my-10'>
-
-                            <img className='w-80 sm:w-[35rem] md:w-96 rounded-xl transition-transform duration-500 hover:scale-110' data-aos="flip-left" src='./quiz.png' />
-
-                            <div className='px-4 sm:px-3 md:px-5 lg:px-0 xl:px-0 flex flex-col justify-center' data-aos="flip-right">
-
-                                <h1 className='font-bold text-sm text-white md:text-lg sm:text-base lg:text-xl xl:text-xl pt-2 md:pt-0'>Quiz Management App</h1>
-                                <p className='hidden md:text-sm text-white lg:text-sm xl:text-sm lg:block pt-2'>I developed a Quiz Management App using Java with a GUI. The app allows users to create, manage,
-                                    and take quizzes through an intuitive graphical interface. Key features include quiz creation, question management,
-                                    and real-time scoring. The application aims to provide an efficient and user-friendly platform for both quiz administrators
-                                    and participants.</p>
-
-                                <div className='flex justify-center md:justify-start'>
-                                    <button onClick={showQuizMessage} className='w-[5rem] h-8 text-xs sm:w-[5rem] sm:text-sm md:w-[6rem] md:text-sm lg:hidden xl:hidden hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
-     bg-gradient-to-r from-[#d062a0] to-[#5c0bed] text-white rounded mt-2'>Read More</button>
-                                </div>
-                            </div>
-
-                        </div>
-
-
-                    </div>
-
-                    <div className='relative'>
-
-                        {airlineMessage && (
-                            <div className='fixed inset-0 w-full h-screen bg-black bg-opacity-90 z-40'> </div>
-                        )}
-
-                        {airlineMessage && (
-                            <div className='fixed inset-0 w-full h-screen flex justify-center items-center z-50'>
-                                <AirlineMessage hideAirMessage={hideAirMessage} />
-                            </div>
-                        )}
-
-
-                        <div className='flex flex-col md:grid md:grid-cols-2 items-center mt-8 md:mt-20'>
-
-                            <img className='w-80 sm:w-[35rem] md:w-96 rounded-xl transition-transform duration-300 hover:scale-110' data-aos="flip-left" src='./airline.jpg' />
-
-                            <div className='px-4 sm:px-3 md:px-5 lg:px-0 xl:px-0 flex flex-col justify-center' data-aos="flip-right">
-
-                                <h1 className='font-bold text-white text-sm md:text-lg sm:text-base lg:text-xl xl:text-xl pt-2 md:pt-0'>Airline Management Website</h1>
-                                <p className='hidden md:text-sm text-white lg:text-sm xl:text-sm pt-2 lg:block'>I developed an Airline Management Website using Java with a GUI. The website provides a
-                                    user-friendly interface for managing airline operations, including booking flights, managing passenger information,
-                                    and scheduling. It features real-time updates and efficient data management, aiming to streamline airline operations
-                                    and improve customer service.</p>
-
-                                <div className='flex justify-center md:justify-start'>
-                                    <button onClick={showAirMessage} className='w-[5rem] h-8 text-xs sm:w-[5rem] sm:text-sm md:w-[6rem] md:text-sm lg:hidden xl:hidden hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
-     bg-gradient-to-r from-[#d062a0] to-[#5c0bed] text-white rounded mt-2'>Read More</button>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-
-
-                    <div className='relative mt-8'>
-
-                        {calculatorMessage && (
-                            <div className='fixed inset-0 w-full h-screen bg-black bg-opacity-90 z-40'> </div>
-                        )}
-
-                        {calculatorMessage && (
-                            <div className='fixed inset-0 w-full h-screen flex items-center justify-center z-50'>
-                                <CalculatorMessage hideCalculatorMessage={hideCalculatorMessage} />
-
-                            </div>
-                        )}
-
-                        <div className='flex flex-col md:grid md:grid-cols-2 items-center mt-4'>
-
-                            <img className='w-80 sm:w-[35rem] md:w-96 lg:my-16 xl:my-16 rounded-xl transition-transform duration-300 hover:scale-110' data-aos="flip-left" src='./calculator.png' />
-
-                            <div className='px-4 sm:px-3 md:px-5 lg:px-0 xl:px-0 flex flex-col justify-center' data-aos="flip-right">
-
-                                <h1 className='font-bold text-white text-sm sm:text-base md:text-lg lg:text-xl xl:text-xl pt-2 md:pt-0'>Calculator App</h1>
-                                <p className='hidden md:text-sm text-white lg:text-sm pt-2 lg:block'>I have created a stylish and functional calculator
-                                    using Next.js and Tailwind CSS. It features a clean and responsive design, making it easy to perform
-                                    basic calculations on any device. This project demonstrates my skills in combining modern frameworks
-                                    to build interactive and visually appealing web applications.</p>
-
-                                <div className='flex justify-center md:justify-start'>
-                                    <button onClick={showCalculatorMessage} className='w-[5rem] h-8 text-xs sm:w-[5rem] sm:text-sm md:w-[6rem] md:text-sm lg:hidden xl:hidden hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
-     bg-gradient-to-r from-[#d062a0] to-[#5c0bed] text-white rounded mt-2 '>Read More</button>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-
-                </div>
-            </div >
-
-        </>
-    )
-}
-
-export default Projects
+            </div>
+        </section>
+    );
+};
+
+export default Projects;
