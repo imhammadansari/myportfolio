@@ -23,13 +23,7 @@ const About = () => {
     AOS.init({
 
     });
-    // const WOW = require('wowjs').WOW;
-    // const wow = new WOW({
-    //     offset: 100,
-    //     mobile: true,
-    //     live: true
-    // });
-    // wow.init();
+
   }, []);
 
 
@@ -61,7 +55,15 @@ const About = () => {
             </button>
           </a>
 
-          <button onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })} data-aos="fade-up"
+          <button
+            onClick={() => {
+              if (typeof window !== "undefined") {
+                document
+                  .getElementById("contact")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
+            data-aos="fade-up"
             className='w-16 h-8 ml-5 md:font-bold lg:font-bold xl:font-bold text-xs mt-4 sm:w-20 sm:h-8 sm:text-sm md:w-24 md:h-9 md:text-base lg:w-28 lg:h-10 lg:text-lg xl:w-28 xl:h-10 xl:text-lg rounded 
   hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
   text-white bg-gradient-to-r from-[#d062a0] to-[#5c0bed]'>
