@@ -25,7 +25,7 @@ const Footer = () => {
                             Hammad.
                         </h3>
                         <p className='text-gray-400 text-sm leading-relaxed'>
-                            Creating powerful digital experiences with innovative web solutions. 
+                            Creating powerful digital experiences with innovative web solutions.
                             I help businesses grow through modern web development.
                         </p>
                     </div>
@@ -36,7 +36,7 @@ const Footer = () => {
                         <ul className='space-y-2'>
                             {quickLinks.map((link) => (
                                 <li key={link}>
-                                    <button 
+                                    <button
                                         onClick={() => scrollToSection(link.toLowerCase())}
                                         className='text-gray-400 hover:text-[#d062a0] text-sm transition-colors duration-300'
                                     >
@@ -53,7 +53,7 @@ const Footer = () => {
                         <ul className='space-y-2'>
                             {ourServices.map((service) => (
                                 <li key={service}>
-                                    <button 
+                                    <button
                                         onClick={() => scrollToSection('contact')}
                                         className='text-gray-400 hover:text-[#d062a0] text-sm transition-colors duration-300'
                                     >

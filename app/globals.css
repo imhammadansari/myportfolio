@@ -3,25 +3,37 @@
 @tailwind utilities;
 
 @layer utilities {
-  @keyframes scroll {
-    from { transform: translateX(0); }
-    to { transform: translateX(-100%); }
-  }
-  
-  .animate-scroll {
-    animation: scroll 40s linear infinite;
-    display: flex;
-    min-width: 200%; /* Ensures smooth transition */
-  }
+    @keyframes scroll {
+        from {
+            transform: translateX(0);
+        }
+
+        to {
+            transform: translateX(-100%);
+        }
+    }
+
+    .animate-scroll {
+        animation: scroll 40s linear infinite;
+        display: flex;
+        min-width: 200%;
+        /* Ensures smooth transition */
+    }
 }
 
 @keyframes scroll {
     0% {
         transform: translateX(0);
     }
+
     100% {
         transform: translateX(-50%);
     }
+}
+
+html,
+body {
+    overflow-x: hidden;
 }
 
 .animate-scroll {

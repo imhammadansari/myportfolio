@@ -76,7 +76,7 @@ const Header = () => {
                 </div>
 
                 {/* Mobile Menu */}
-                <div className={`lg:hidden fixed top-[60px] left-0 w-full bg-black/95 backdrop-blur-md transition-all duration-300 ${showmenu ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
+                <div className={`lg:hidden fixed top-[60px] left-0 right-0 overflow-x-hidden bg-black/95 backdrop-blur-md transition-all duration-300 ${showmenu ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
                     <div className='flex flex-col items-center py-6 gap-4'>
                         {navItems.map((item) => (
                             <button
