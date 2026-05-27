@@ -44,12 +44,12 @@ const About = () => {
 
           </p>
           <a href="./Resume - Hammad Ansari.pdf" download>
-            <button data-aos="fade-up"
+            {/* <button data-aos="fade-up"
               className='w-16 h-8 md:font-bold lg:font-bold xl:font-bold text-xs mt-4 sm:w-20 sm:h-8 sm:text-sm md:w-24 md:h-9 md:text-base lg:w-28 lg:h-10 lg:text-lg xl:w-28 xl:h-10 xl:text-lg rounded 
     hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
     text-white bg-gradient-to-r from-[#d062a0] to-[#5c0bed]'>
               My CV
-            </button>
+            </button> */}
           </a>
 
           <button
@@ -61,7 +61,7 @@ const About = () => {
               }
             }}
             data-aos="fade-up"
-            className='w-16 h-8 ml-5 md:font-bold lg:font-bold xl:font-bold text-xs mt-4 sm:w-20 sm:h-8 sm:text-sm md:w-24 md:h-9 md:text-base lg:w-28 lg:h-10 lg:text-lg xl:w-28 xl:h-10 xl:text-lg rounded 
+            className='w-16 h-8 md:font-bold lg:font-bold xl:font-semibold text-xs mt-4 sm:w-20 sm:h-8 sm:text-sm md:w-24 md:h-9 md:text-base lg:w-28 lg:h-10 lg:text-lg xl:w-28 xl:h-10 xl:text-lg rounded 
   hover:bg-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#d062a0] hover:to-[#5c0bed] 
   text-white bg-gradient-to-r from-[#d062a0] to-[#5c0bed]'>
             Hire Me
