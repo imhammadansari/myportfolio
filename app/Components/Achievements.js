@@ -14,9 +14,9 @@ const Achievements = () => {
     }, []);
 
     const achievements = [
-        { number: '50+', label: 'Projects Completed' },
-        { number: '30+', label: 'Happy Clients' },
-        { number: '98%', label: 'Client Satisfaction' },
+        { number: '10+', label: 'Projects Completed' },
+        { number: '10+', label: 'Happy Clients' },
+        { number: '96%', label: 'Client Satisfaction' },
         { number: '24/7', label: 'Support Available' },
     ];
 

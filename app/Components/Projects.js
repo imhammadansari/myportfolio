@@ -22,6 +22,15 @@ const Projects = () => {
     const projects = [
         {
             id: 1,
+            category: 'web',
+            title: 'The Cooking Academy',
+            tech: 'Academy, Educational Platform',
+            image: './cooking-academy.png',
+            link: 'https://thecookingacademy.com.pk/',
+            description: '**The Cooking Academy** is a modern, responsive website I designed and developed for a culinary training institute. It features smooth animations, an intuitive user interface, responsive design, and optimized performance to deliver an engaging user experience.'
+        },
+        {
+            id: 2,
             category: 'ecommerce',
             title: 'Shopify Plus Designers',
             tech: 'Shopify, E-Commerce',
@@ -30,7 +39,7 @@ const Projects = () => {
             description: 'A professional design and development studio specializing in custom Shopify Plus solutions, marketing integrations, and scalable e-commerce stores.'
         },
         {
-            id: 2,
+            id: 3,
             category: 'marketing',
             title: 'Grow Online Presence',
             tech: 'Digital Marketing, IT Services',
@@ -39,7 +48,7 @@ const Projects = () => {
             description: 'Professional IT services and digital solutions designed to help businesses operate smarter, scale faster, and dominate their competition online.'
         },
         {
-            id: 3,
+            id: 4,
             category: 'marketing',
             title: 'Dynamic Woodworking',
             tech: 'Woodworking, Web Design',
@@ -48,7 +57,7 @@ const Projects = () => {
             description: 'For over 30 years, transforming homes across the Twin Cities Metro with exceptional woodworking, custom cabinets, countertops, and fireplace surrounds.'
         },
         {
-            id: 4,
+            id: 5,
             category: 'ecommerce',
             title: 'MuSolf\'s Flooring',
             tech: 'E-Commerce, Sustainable Products',
@@ -57,7 +66,7 @@ const Projects = () => {
             description: 'Offering sustainable flooring collections in a wide range of materials and wood finishes.'
         },
         {
-            id: 5,
+            id: 6,
             category: 'web',
             title: 'MCSO Doctors',
             tech: 'Healthcare, Web Development',
@@ -66,7 +75,7 @@ const Projects = () => {
             description: 'Premier urological care provider in Chicago offering superior treatment and compassionate care.'
         },
         {
-            id: 6,
+            id: 7,
             category: 'frontend',
             title: 'Max Restaurant',
             tech: 'HTML, CSS, JavaScript',
@@ -75,7 +84,7 @@ const Projects = () => {
             description: 'A beautifully designed restaurant website with menu displays, reservation system, and event showcase for an authentic dining experience.'
         },
         {
-            id: 7,
+            id: 8,
             category: 'frontend',
             title: 'Elegencia',
             tech: 'React.js, Modern UI',
@@ -84,7 +93,7 @@ const Projects = () => {
             description: 'An elegant Royale Restaurant React JS template featuring a sophisticated design, menu exploration, and seamless user experience for fine dining establishments.'
         },
         {
-            id: 8,
+            id: 9,
             category: 'ecommerce',
             title: 'Dinevera',
             tech: 'Webflow, E-Commerce',
@@ -93,7 +102,7 @@ const Projects = () => {
             description: 'A Webflow ecommerce website template for restaurants and food businesses with online ordering, delivery zones, and multi-location support.'
         },
         {
-            id: 9,
+            id: 10,
             category: 'ecommerce',
             title: 'Toad&Co',
             tech: 'Sustainable Fashion, E-Commerce',
@@ -102,7 +111,7 @@ const Projects = () => {
             description: 'Sustainable, organic, and eco-friendly clothing brand since 1996, offering built-to-last apparel that is kind to the planet and rooted in community.'
         },
         {
-            id: 10,
+            id: 11,
             category: 'web',
             title: 'Laser and Me',
             tech: 'Medical Spa, Healthcare',
@@ -111,7 +120,7 @@ const Projects = () => {
             description: 'A full-service medical spa in Midtown Manhattan offering painless laser hair removal, skin rejuvenation, acne scar treatments, and Botox for every skin type.'
         },
         {
-            id: 11,
+            id: 12,
             category: 'web',
             title: 'Chaletô',
             tech: 'Property Management, Real Estate',
@@ -120,7 +129,7 @@ const Projects = () => {
             description: 'Quebec-based chalet rental management service helping property owners maximize profitability with professional photography, dynamic pricing, and full-service guest management.'
         },
         {
-            id: 12,
+            id: 13,
             category: 'web',
             title: 'S&P Real Estate',
             tech: 'Real Estate, Luxury Properties',
@@ -129,7 +138,7 @@ const Projects = () => {
             description: 'International real estate boutique specializing in branded residences, masterplanned communities, destination resorts, and urban super prime real estate developments.'
         },
         {
-            id: 13,
+            id: 14,
             category: 'web',
             title: 'Icon Villas',
             tech: 'Luxury Rentals, Travel',
@@ -138,7 +147,7 @@ const Projects = () => {
             description: 'Curated selection of private, hand-picked luxury villas throughout South Africa with breathtaking views, quality finishes, and personalized hospitality experiences.'
         },
         {
-            id: 14,
+            id: 15,
             category: 'web',
             title: 'DI Jones',
             tech: 'Real Estate, Property',
@@ -147,7 +156,7 @@ const Projects = () => {
             description: 'Australian real estate agency offering property sales, management, and expert market insights for buyers and sellers across New South Wales.'
         },
         {
-            id: 15,
+            id: 16,
             category: 'web',
             title: 'Ripcony',
             tech: 'Real Estate, Commercial',
@@ -156,7 +165,7 @@ const Projects = () => {
             description: 'Professional real estate services specializing in commercial and residential property solutions with market expertise.'
         },
         {
-            id: 16,
+            id: 17,
             category: 'ecommerce',
             title: 'Rejuvenate Skincare Studio',
             tech: 'Skincare, E-Commerce',
@@ -165,7 +174,7 @@ const Projects = () => {
             description: 'Thoughtfully curated skincare studio offering facials, professional treatments, and clean beauty products to support barrier health and deliver visible results.'
         },
         {
-            id: 17,
+            id: 18,
             category: 'web',
             title: 'Maryam Hair & Beauty',
             tech: 'Salon, Beauty',
@@ -174,7 +183,7 @@ const Projects = () => {
             description: "London's premier ladies-only salon offering professional hair styling, beauty treatments, and personalized services in a comfortable, private environment."
         },
         {
-            id: 18,
+            id: 19,
             category: 'ecommerce',
             title: 'Regis Salons',
             tech: 'Hair Salon, E-Commerce',
@@ -185,7 +194,7 @@ const Projects = () => {
 
         // --- NEW PET CARE PROJECT ---
         {
-            id: 19,
+            id: 20,
             category: 'web',
             title: 'Buckaroo Buddies Pet Care',
             tech: 'Pet Services, Local Business',
@@ -193,10 +202,10 @@ const Projects = () => {
             link: 'https://www.buckaroobuddiespetcare.com/',
             description: "San Antonio's trusted pet care service offering quality pet sitting, first aid certified team, and dependable care for your furry sidekicks."
         },
-        { id: 20, category: 'web', title: 'CrowdFunding Platform', tech: 'MERN Stack', image: './crowdFunding.png', link: 'https://crowd-funding-rose.vercel.app/home' },
-        { id: 21, category: 'web', title: 'E-commerce Website', tech: 'MERN Stack', image: './ecommerceWebsite.png', link: 'https://mern-ecommerce-peach-gamma.vercel.app/home' },
-        { id: 22, category: 'frontend', title: 'Restaurant Website', tech: 'HTML/CSS/JS', image: './restaurent2.jpg', link: '#' },
-        { id: 23, category: 'web', title: 'Employee Management', tech: 'MERN Stack', image: './employeeManagement.png', link: '#' },
+        { id: 21, category: 'web', title: 'CrowdFunding Platform', tech: 'MERN Stack', image: './crowdFunding.png', link: 'https://crowd-funding-rose.vercel.app/home' },
+        { id: 22, category: 'web', title: 'E-commerce Website', tech: 'MERN Stack', image: './ecommerceWebsite.png', link: 'https://mern-ecommerce-peach-gamma.vercel.app/home' },
+        { id: 23, category: 'frontend', title: 'Restaurant Website', tech: 'HTML/CSS/JS', image: './restaurent2.jpg', link: '#' },
+        { id: 24, category: 'web', title: 'Employee Management', tech: 'MERN Stack', image: './employeeManagement.png', link: '#' },
 
     ];
 
